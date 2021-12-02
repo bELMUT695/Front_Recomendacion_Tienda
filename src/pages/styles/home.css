@@ -1,7 +1,176 @@
-.container{
-    background-color: rgb(19, 42, 71);
 
-    border-bottom: solid 1px #ccc;
-    padding: 10px;
-    margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Dancing+Script:wght@500&display=swap');
+
+/*----------  GOOGLE FONTS  ----------*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap");
+/*----------  VARIABLES  ----------*/
+:root {
+  /*----------  COLORS   ----------*/
+  --clr-primary: #f3f2ee;
+  --clr-text-primary: #111;
+  --clr-text-secondary: #e53637;
+  --clr-text-muted: #b7b7b7;
+
+  /*----------  SPACING  ----------*/
+  --sp-xs: 0.25rem;
+  --sp-sm: 0.5rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.5rem;
+  --sp-xl: 2rem;
+  --sp-2xl: 3rem;
+  --sp-3xl: 4rem;
+
+  --nav-bar-height: 80px;
+
+ 
+  --font-family: "Nunito Sans", sans-serif;
+  --fs-xl: 2rem; /* 32px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-sm: 1rem; /* 16px */
+  --fs-xs: 0.875rem; /* 14px */
+  
+  --fw-md: 600;
+  --fw-bold: 800;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.header{
+ 
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.hero {
+  display: -ms-grid;
+  display: grid;
+  overflow: hidden;
+  background: radial-gradient(#ffffff , #faadbd);
+
+}
+
+
+.hero__img {
+  
+  max-width: 60%;
+  -webkit-animation-name: fade-in-bottom;
+          animation-name: fade-in-bottom;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
+         
+  }
+  .hero__img {
+    max-height: 500px;
+    -ms-grid-column-align: end;
+    justify-self: end;
+  }
+}
+.img__home{
+float: left;
+}
+
+
+.hero__content {
+  padding: var(--sp-md);
+  -webkit-animation-name: fade-in-right;
+          animation-name: fade-in-right;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.hero__content h2 {
+  font-size: var(--fs-md);
+  letter-spacing: 0.1em;
+  color: var(--clr-text-secondary);
+  margin-bottom: var(--sp-xs);
+}
+
+.hero__content h1 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-sm);
+}
+
+.hero__content p {
+  margin-bottom: var(--sp-2xl);
+}
+
+@media screen and (min-width: 768px) {
+  .hero__content {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+
+
+a.btn--filled {
+  background-color: var(--clr-text-primary);
+  color: white;
+  padding: var(--sp-md) var(--sp-lg);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a.btn--filled:hover {
+  color: var(--clr-text-secondary);
+}
+
+.Titulo1Home{
+  font-weight: 900;
+  font-family: 'Dancing Script', cursive;
+}
+.titulo2Home{
+  
+ text-align: center;
+}
+.titulo3Home{
+ text-align: center;
+ font-size: 60px;
+ font-weight: 900;
+ font-family: 'Comforter', cursive;
+
+}
+.card{
+    position: relative;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.card-title{
+   position: absolute;
+   font-size: 7vw;
+    top: 50%;
+    background-color:white ;
+    font-family: 'Comforter', cursive;
+    -ms-word-break: break-all;
+     word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
 }

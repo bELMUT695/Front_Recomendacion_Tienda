@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Helmet} from "react-helmet";
 
 class Login extends React.Component{
-
+  
     state = {
         apiKeyToken:undefined,
         form:{
@@ -72,7 +72,7 @@ render(){
         <>
         <section className="login">
           <section  className="login__container" >
-            <h2>Inicia sesión</h2>
+            <h2 className="titulologin">Inicia sesión</h2>
                <form   onSubmit={this.handleSubmit}>
                     <input
                       name="email"
@@ -82,15 +82,15 @@ render(){
                       value={this.state.form.email}
                       onChange={this.handleChange}
                     />
-            <input
-              name="password"
-              className="inputE"
-              type="password"
-              placeholder="Contraseña"
-              value={this.state.form.password}
-              onChange={this.handleChange}
-            />
-            <button className="button" type="submit">Iniciar sesión</button>
+                    <input
+                      name="password"
+                      className="inputE"
+                      type="password"
+                      placeholder="Contraseña"
+                      value={this.state.form.password}
+                      onChange={this.handleChange}
+                    />
+            <button className="buttonlog" type="submit">Iniciar sesión</button>
             <div className="form-check">
               <label htmlFor="first_checkbox">
                 <input type="checkbox" id="cbox1" value="first_checkbox" />
@@ -102,7 +102,7 @@ render(){
             </div>
             
             <h1 className="mensaje" >¿Eres nuevo en EbookNet?</h1> 
-            <button className="button" type="submit">Crea su cuenta de EbookNet</button>
+            <button className="buttonlog" type="submit">Crea su cuenta </button>
 
            
             

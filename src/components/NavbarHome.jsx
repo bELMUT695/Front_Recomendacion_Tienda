@@ -1,38 +1,41 @@
 import React from 'react';
+import './styles/Header.scss';
 import { Link } from 'react-router-dom';
-import Logo from './images/logo.jpg';
+import logo from './assets/logos/logo.jpg'
+import menu from './assets/icons/icon_menu.svg'
 import './styles/NavbarHome.css'
 class NavbarHome extends React.Component{
 
     render(){
 
-        return(
-        <>
-         <section className="header sticky-top">
-        <div className="containernavbar" >
-          <div className="navbar">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src={Logo} alt=""  className="logo"/>
-                    </a>
-                </div>
-                <nav>
-                    <ul id="MenuItems">
-                        <Link className="nav-link" to="/login">
-                        Iniciar session
-                      </Link>
-                    </ul>
-                </nav>
-                <a href="cart.html">
+        return (
+          <nav className="header sticky-top">
+            <img src={menu} alt="menu" className="menu" />
 
-                    <img src="images/cart.png" alt="" width="30px" height="30px" />
-                </a>
-                <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()"/>
+            <div className="navbar-left">
+              <img src={logo} alt="logo" className="logo-nav" />
+
             </div>
+
+            <div className="navbar-right">
+              <ul>
+                <li className="navbar-email" >
+                 @example.com
+                </li>
+                <li
+                  className="navbar-shopping-cart"
+                 
+                >
+                  <Link  to="/login">
+                        Iniciar session
+                  </Link>
+               
+                </li>
+              </ul>
             </div>
-            </section>
-          </>
-        )
+           
+          </nav>
+        );
      }  
     
     }

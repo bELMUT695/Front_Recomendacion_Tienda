@@ -9,7 +9,7 @@ class menRecomendado extends React.Component{
    
     return(
       <>
-        <Navbar /><br /><br /><br /><br /> 
+  
 
         <div className="small-container">
           <div className="row">

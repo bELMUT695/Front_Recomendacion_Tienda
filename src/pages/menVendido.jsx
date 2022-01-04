@@ -9,8 +9,7 @@ class menVendido extends React.Component{
    
     return(
       <>
-        <Navbar /><br /><br /><br /><br /> 
-
+       
         <div className="small-container">
           <div className="row">
             <div className="col-md-3">

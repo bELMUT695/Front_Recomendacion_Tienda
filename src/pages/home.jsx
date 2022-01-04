@@ -44,7 +44,7 @@ class Home extends React.Component{
                                     <div className="row">
                                    
                                       <div className="col-md-6">
-                                         <Link className="nav-link" to="/women">
+                                         <Link className="nav-link" to="/women-top-list">
                                             <div className="card">
                                               <img src="https://images.ctfassets.net/8397t4ds1z4f/fkh0inIdTG638XTza7LMz/d344f21244f906309098c10dd5b70a3b/tryp_female.jpg?h=1000&w=800&q=50&fm=jpg"  alt="" />
                                            
@@ -56,7 +56,7 @@ class Home extends React.Component{
                                       </div> 
                                       
                                         <div className="col-md-6">
-                                           <Link className="nav-link" to="/homemen">
+                                           <Link className="nav-link" to="/menVendido ">
                                             <div className="card">
                                               <img src="https://images.ctfassets.net/8397t4ds1z4f/3lVMQ2dht9TISIixwuPA0M/b25f061a70dabdf9aece97aa11fa76c6/tryp_male.jpg?h=1000&w=800&q=50&fm=jpg"  alt="" />
                                           

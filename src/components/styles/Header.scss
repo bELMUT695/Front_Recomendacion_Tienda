@@ -10,7 +10,10 @@ nav {
     display: none;
   }
   .logo-nav {
+    display: block;
+    margin: auto;
     width: 100px;
+    height: auto;
   }
   .navbar-left ul,
   .navbar-right ul {
@@ -73,6 +76,4 @@ nav {
       display: none;
     }
   }
-  .ProductItem rating {
-    background-color: aqua;
-  }
+  

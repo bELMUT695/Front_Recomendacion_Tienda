@@ -1,9 +1,9 @@
 import React from 'react';
-import './styles/Header.scss';
+
 import { Link } from 'react-router-dom';
 import logo from './assets/logos/logo.jpg'
 import menu from './assets/icons/icon_menu.svg'
-import './styles/NavbarHome.css'
+
 class NavbarHome extends React.Component{
 
     render(){

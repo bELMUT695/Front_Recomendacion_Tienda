@@ -1,16 +1,16 @@
 import React from 'react';
-import './styles/Header.scss';
+import './styles/Header.scss'
 import { Link } from 'react-router-dom';
 import logo from './assets/logos/logo.jpg'
 import menu from './assets/icons/icon_menu.svg'
-import './styles/NavbarHome.css';
+
 import shoppingCart from './assets/icons/icon_shopping_cart.svg';
 class Navbar extends React.Component{
 
     render(){
 
         return(
-          <nav className="header sticky-top">
+          <nav >
             <img src={menu} alt="menu" className="menu" />
 
             <div className="navbar-left">

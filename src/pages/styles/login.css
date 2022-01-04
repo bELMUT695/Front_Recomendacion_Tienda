@@ -8,12 +8,6 @@
     height: 100vh;
   }
   
-  img{
-    display: block;
-    margin: auto;
-    width: 100%;
-    height: auto;
-  }
   
   .login__container{
     position: absolute;

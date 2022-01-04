@@ -18,7 +18,7 @@ class homeMen extends React.Component{
                   <img src="https://img01.ztat.net/zl-campaign/zlevent/campaigns/images/jil9jg8h1l59j3vb9rg7sj3f1v/types/MOOD_DESKTOP.jpg" alt="" />
                 </div>
                 <div className="blogs-news-info-container">
-                  <h2>Renueva tu estilo</h2>
+                  <h2>Renueva tu estiloo</h2>
                 </div>
               </div>
             </section>

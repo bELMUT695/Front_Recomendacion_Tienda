@@ -10,10 +10,15 @@ class NavbarHome extends React.Component{
 
         return (
           <nav className="header sticky-top">
+             <div  >
             <img src={menu} alt="menu" className="menu" />
+            </div>
+          
+            <img src={logo} alt="logo" className="logo-nav" />
+            
 
             <div className="navbar-left">
-              <img src={logo} alt="logo" className="logo-nav" />
+           
 
             </div>
 

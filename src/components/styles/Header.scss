@@ -3,22 +3,30 @@ nav {
     display: flex;
     background-color: white;
     justify-content: space-between;
+    
     padding: 0 24px;
     border-bottom: 1px solid var(--very-light-pink);
   }
   .menu {
     display: none;
   }
+  .menu1{
+    position: absolute;
+    margin-left: 100px;
+  }
   .logo-nav {
     display: block;
-    margin: auto;
+   
     width: 100px;
     height: auto;
+    position: absolute;
+    margin-top: 20px;
   }
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
     padding: 0;
+   
     margin: 0;
     display: flex;
     align-items: center;
@@ -26,6 +34,8 @@ nav {
   }
   .navbar-left {
     display: flex;
+    position: absolute;
+    margin-left: 100px;
   }
   .navbar-left ul {
     margin-left: 12px;
@@ -50,6 +60,7 @@ nav {
   }
   .navbar-shopping-cart {
     position: relative;
+    
   }
   .navbar-shopping-cart div {
     width: 16px;
@@ -66,14 +77,57 @@ nav {
     align-items: center;
   }
   @media (max-width: 640px) {
+    .nav-women1{
+      height: 195px;
+      display: flex;
+      background-color: white;
+      justify-content: space-between;
+    
+      padding: 0 24px;
+      border-bottom: 1px solid var(--very-light-pink);
+    }
     .menu {
       display: block;
+      position: absolute;
+      top: 10px;
+      margin-left: -10px;
+      
+    }
+   .logo-nav{
+     position: absolute;
+     margin-left: 30px;
+     margin-top:15px;
+  
+   }
+    .navbar-left {
+   
+      margin-left: -200px;
+      
     }
     .navbar-left ul {
-      display: none;
+      
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+      margin-left: 0px;
+     
     }
+    .navbar-left ul li {
+    
+      
+      padding: 12px;
+     
+    }
+    .navbar-left.active {
+      margin-left: 2px;
+      top: 50px;
+   
+    }
+
     .navbar-email {
       display: none;
     }
+
+    
   }
-  

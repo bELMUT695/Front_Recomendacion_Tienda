@@ -8,6 +8,7 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+  
 
   return (
     <nav className={click ? "nav-women1" : "nav-women"}>

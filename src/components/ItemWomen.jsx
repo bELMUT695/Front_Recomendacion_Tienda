@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 
-const ItemWomen = () => {
+const ItemWomen = ({ product }) => {
+  console.log(product.image.URL)
     const options = {
         value: 3,
         readOnly: true,
@@ -13,14 +14,19 @@ const ItemWomen = () => {
       };
   return (
     <div className="ProductItem">
-      <img
-        src="https://res.cloudinary.com/sa-marcos/image/upload/v1639111832/Medio_Cuerpo_Women/Blusas/blusa-manga-morcego-vinho_345708_1000_1_m11uaq.jpg"
+      {
+        product.image.map((number) =>
+        <img
+        src={number.URL}
         alt="{lgo}"
       />
+       )
+      }
+      
       <div className="product-info">
         <div>
-          <p>$140</p>
-          <p>Blusa flofral de cintura negra con volantes</p>
+          <p>${product.unitPrice}</p>
+          <p>{product.description}</p>
         </div>
 
         <figure style={{ fontSize: "1.5em", color: "green" }}>

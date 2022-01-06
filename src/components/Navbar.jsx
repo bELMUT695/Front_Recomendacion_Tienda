@@ -11,7 +11,7 @@ const Navbar = () => {
   
 
   return (
-    <nav className={click ? "nav-women1" : "nav-women"}>
+    <nav  header sticky-top className={click ? "nav-women1  header sticky-top " : "nav-women header sticky-top"}>
       <div onClick={handleClick}>
         <img src={menu} alt="menu" className="menu" />
       </div>

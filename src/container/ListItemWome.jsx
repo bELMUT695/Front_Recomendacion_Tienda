@@ -3,20 +3,35 @@ import  ItemWomen from '../components/ItemWomen'
 import './style/ListitemWomen.scss'
 const API='https://back-tienda-electronica.herokuapp.com/api/clothe/category1/female';
 import ItemsWomen from '../hooks/useGetProductWomen';
+import Category  from '../components/Category';
 const ListItemWomen=()=>{
 
     const products=ItemsWomen(API)
-    return(
-    <section className="main-container">
-        <div className="ProductList">
-        {products.map(item => (
-          item.gender == 'Female'?
-           <ItemWomen product={item} key={item.id}/>
-           :null
-        ))}
-     </div>
-	</section>
-
+    return (
+      <div className="wrap">
+        
+        <div className="store-wrapper">
+          <div className="category_list">
+          <div className="filter-category">
+                    <img src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-filter.svg" alt="icon-filter" style={{width: '25px'}}/>
+                    <p>FILTRAR</p>
+                </div>  
+           <div className="menu-category">
+           <Category/> 
+          </div>       
+        
+          </div>
+          <section className="main-container-women">
+            <div className="ProductListWomen">
+              {products.map((item) =>
+                item.gender == "Female" ? (
+                  <ItemWomen product={item} key={item.id} />
+                ) : null
+              )}
+            </div>
+          </section>
+        </div>
+      </div>
     );
 
     

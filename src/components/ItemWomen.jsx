@@ -26,7 +26,7 @@ const ItemWomen = ({ product }) => {
       <div className="product-info">
         <div>
           <p>${product.unitPrice}</p>
-          <p>{product.description}</p>
+          <p>{product.name}</p>
         </div>
 
         <figure style={{ fontSize: "1.5em", color: "green" }}>

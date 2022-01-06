@@ -1,7 +1,7 @@
 import React from 'react';
 import  ItemWomen from '../components/ItemWomen'
 import './style/ListitemWomen.scss'
-const API='http://localhost:3001/api/clothe/category1/Female';
+const API='https://back-tienda-electronica.herokuapp.com/api/clothe/category1/female';
 import ItemsWomen from '../hooks/useGetProductWomen';
 const ListItemWomen=()=>{
 

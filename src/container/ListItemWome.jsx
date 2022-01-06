@@ -10,7 +10,9 @@ const ListItemWomen=()=>{
     <section className="main-container">
         <div className="ProductList">
         {products.map(item => (
-        <ItemWomen product={item} key={item.id}/>
+          item.gender == 'Female'?
+           <ItemWomen product={item} key={item.id}/>
+           :null
         ))}
      </div>
 	</section>

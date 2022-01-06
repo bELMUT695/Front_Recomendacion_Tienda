@@ -1,0 +1,43 @@
+.Buscador-women-item:focus {
+    outline: none;
+}
+
+
+.Buscador-women-item:focus {
+    border-color: rgb(18, 131, 42);
+    border-width: 0px 0px 3px;
+}
+
+.contenedor-buscador{
+
+    position: relative;
+    width: 100%;
+    display: flex;
+  justify-content: center;
+}
+.Buscador-women-item{
+    border-radius: 2px;
+    overflow: hidden;
+    border-width: 0px 0px 1px;
+    border-style: solid;
+    border-color: rgb(114, 114, 114);
+    width: 90%;
+    padding: 8px 0px;
+    min-width: 150px;
+    color: rgb(33, 33, 33);
+    font-size: 14px;
+    font-family: "Open Sans", arial, sans-serif;
+    font-weight: 600;
+    align-self: stretch;
+    background-color: transparent;
+    caret-color: rgb(18, 73, 131);
+    appearance: none;
+}
+
+.icon2{
+  
+  color: #4f5b66;
+  border-style: none;
+  background-color:white;
+  border-bottom: 3px solid rgb(18, 131, 42);
+}

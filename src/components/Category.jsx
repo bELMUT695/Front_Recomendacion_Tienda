@@ -14,16 +14,16 @@ return (
                 <a href="/">All</a>
             </li>
             <li>
-                <a href="/">Clothes</a>
+                <a href="/">Polos</a>
             </li>
             <li>
-                <a href="/">Electronics</a>
+                <a href="/">Blusas</a>
             </li>
             <li>
-                <a href="/">Furnitures</a>
+                <a href="/">Shorts</a>
             </li>
             <li>
-                <a href="/">Toys</a>
+                <a href="/">Pantalones</a>
             </li>
             <li>
                 <a href="/">Other</a>

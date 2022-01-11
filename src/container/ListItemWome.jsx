@@ -1,9 +1,10 @@
 import React from 'react';
 import  ItemWomen from '../components/ItemWomen'
 import './style/ListitemWomen.scss'
-const API='https://back-tienda-electronica.herokuapp.com/api/clothe/category1/female';
+const API='https://back-tienda-electronica.herokuapp.com/api/clothe/gender/Female';
 import ItemsWomen from '../hooks/useGetProductWomen';
 import Category  from '../components/Category';
+import { Link } from 'react-router-dom';
 import Buscador from '../components/BuscadorWomenItem'
 const ListItemWomen=()=>{
 
@@ -29,8 +30,11 @@ const ListItemWomen=()=>{
             <div className="ProductListWomen">
               {products.map((item) =>
                 item.gender == "Female" ? (
+                  <Link to={`/women-top-list/${item._id}` } style={{ color: 'inherit', textDecoration: 'none'}}> 
                   <ItemWomen product={item} key={item.id} />
+                  </Link>
                 ) : null
+                
               )}
             </div>
           </section>

@@ -6,6 +6,8 @@ import ListWomen from '../pages/ListWomen';
 import ListMen from '../pages/ListMen';
 import Layout from '../container/Layout';
 import LayoutMen from '../container/LayoutMen';
+import OrderItemWomen from '../pages/OrderItemWomen'
+import { GifsContextProvider } from "../contex/UserContext";
 //import Navbar from '../components/Navbar'
 
 
@@ -15,7 +17,7 @@ const App = () => (
      
           <Route exact path="/login" component={Login}/> 
           <Route exact path="/home" component={ Home }/> 
-
+          
           <Route path='/men-top-list/:path?'>
             <LayoutMen>
               <Switch > 
@@ -24,13 +26,17 @@ const App = () => (
             </LayoutMen>
           </Route>
 
-          <Route> 
+     
             <Layout>
+            <GifsContextProvider>
               <Switch > 
-                <Route path="/women-top-list" component={ ListWomen } />
+                <Route exact path="/women-top-list" component={ ListWomen } />
+               <Route  path="/women-top-list/:id" component={ OrderItemWomen}/>
+              
               </Switch> 
+              </GifsContextProvider>
             </Layout>
-          </Route>
+         
       </Switch>  
     </BrowserRouter>
 )

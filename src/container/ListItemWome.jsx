@@ -14,15 +14,15 @@ const ListItemWomen=()=>{
         
         <div className="store-wrapper">
           <div className="category_list">
-          <div className="filter-category">
-                    <img src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-filter.svg" alt="icon-filter" style={{width: '25px'}}/>
-                    <p>FILTRAR</p>
-                </div>  
-           <div className="menu-category">
-           <Category/> 
-          </div>       
-        
+            <div className="filter-category">
+              <img src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-filter.svg" alt="icon-filter" style={{width: '25px'}}/>
+              <p>FILTRAR</p>
+            </div>  
+            <div className="menu-category">
+              <Category/> 
+            </div>       
           </div>
+          
           <section className="main-container-women">
             <div className="Buscador-women">
             <Buscador/>

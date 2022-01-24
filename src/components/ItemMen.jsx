@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Rating } from "@material-ui/lab";
-import axios from "axios";
 import "./styles/ItemMen.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 
-const ItemMen = () => {
+const ItemMen = ({ product }) => {
 
   const options = {
     value: 3,
@@ -14,35 +13,21 @@ const ItemMen = () => {
     precision: 0.5,
   };
 
-  /*const [clothes, setClothes] = useState([]);
-
-  useEffect(() => {
-
-    const consultaAPI = async () => {
-      const respuesta = await axios({
-        method: 'GET',
-        url:'https://back-tienda-electronica.herokuapp.com/api/clothe/',      
-        headers: {'Content-Type': 'application/json'},                
-      });
- 
-      setClothes(respuesta);
-    };
-
-    consultaAPI();
-  }, []);
-
-  console.log(clothes);*/
 
   return (
     <div className="ProductItem">
-      <img
-        src="https://res.cloudinary.com/sa-marcos/image/upload/v1639111832/Medio_Cuerpo_Women/Blusas/blusa-manga-morcego-vinho_345708_1000_1_m11uaq.jpg"
-        alt="{lgo}"
-      />
+      {
+        product.image.map((number) =>
+          <img
+            src={number.URL}
+            alt="{lgo}"
+          />
+        )
+      }
       <div className="product-info">
         <div>
-          <p>$140</p>
-          <p>Blusa flofral de cintura negra con volantes</p>
+          <p>${product.unitPrice}</p>
+          <p>{product.name}</p>
         </div>
 
         <figure style={{ fontSize: "1.5em", color: "green" }}>

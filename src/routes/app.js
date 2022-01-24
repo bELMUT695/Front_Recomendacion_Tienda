@@ -27,15 +27,14 @@ const App = () => (
           </Route>
 
      
-            <Layout>
+          <Layout>
             <GifsContextProvider>
               <Switch > 
                 <Route exact path="/women-top-list" component={ ListWomen } />
-               <Route  path="/women-top-list/:id" component={ OrderItemWomen}/>
-              
+                <Route  path="/women-top-list/:id" component={ OrderItemWomen }/>
               </Switch> 
-              </GifsContextProvider>
-            </Layout>
+            </GifsContextProvider>
+          </Layout>
          
       </Switch>  
     </BrowserRouter>

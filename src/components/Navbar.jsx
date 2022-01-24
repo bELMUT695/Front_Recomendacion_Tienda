@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav  header sticky-top className={click ? "nav-women1  header sticky-top " : "nav-women header sticky-top"}>
       <div onClick={handleClick}>
-        <img src={menu} alt="menu" className="menu" />
+          <img src={menu} alt="menu" className="menu" />
       </div>
 
       <img src={logo} alt="logo" className="logo-nav" />

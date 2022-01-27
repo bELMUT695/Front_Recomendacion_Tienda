@@ -6,7 +6,9 @@ import ListWomen from '../pages/ListWomen';
 import ListMen from '../pages/ListMen';
 import Layout from '../container/Layout';
 import LayoutMen from '../container/LayoutMen';
-import OrderItemWomen from '../pages/OrderItemWomen'
+import OrderItemWomen from '../pages/OrderItemWomen';
+import OrderItemMen from '../pages/OrderItemMen.jsx';
+
 import { GifsContextProvider } from "../contex/UserContext";
 //import Navbar from '../components/Navbar'
 
@@ -21,7 +23,8 @@ const App = () => (
           <Route path='/men-top-list/:path?'>
             <LayoutMen>
               <Switch > 
-                <Route path="/men-top-list" component={ ListMen } />
+                <Route exact path="/men-top-list" component={ ListMen } />
+                <Route  path="/men-top-list/:id" component={ OrderItemMen }/>
               </Switch> 
             </LayoutMen>
           </Route>

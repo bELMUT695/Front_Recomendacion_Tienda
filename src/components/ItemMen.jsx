@@ -18,9 +18,9 @@ const ItemMen = ({ product }) => {
     <div className="ProductItem">
       {
         product.image.map((number) =>
-          <img
+          <img className="Image"
             src={number.URL}
-            alt="{lgo}"
+            alt="{logo}"
           />
         )
       }

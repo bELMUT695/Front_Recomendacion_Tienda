@@ -56,13 +56,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-.hero {
-  display: -ms-grid;
-  display: grid;
-  overflow: hidden;
-  background: radial-gradient(#ffffff , #faadbd);
-
-}
 
 
 .hero__img {
@@ -164,13 +157,73 @@ a.btn--filled:hover {
 .card-title{
    position: absolute;
    font-size: 7vw;
-    top: 50%;
-    background-color:white ;
-    font-family: 'Comforter', cursive;
-    -ms-word-break: break-all;
-     word-break: break-word;
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
+   top: 50%;
+   background-color:white ;
+   font-family: 'Comforter', cursive;
+   -ms-word-break: break-all;
+   word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+      hyphens: auto;
 }
+
+
+.ContainerCategory{
+  display: grid;
+	grid-template-columns: repeat(auto-fill, 240px);
+	gap: 26px;
+	place-content: center;
+	margin: 3em 0 0 0;
+  
+}
+.opciones{
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+/* square buttons */
+.rec.rec-arrow-left {
+  
+  position: absolute;
+  left: 2%;
+ z-index: 1
+  
+}
+
+.rec.rec-arrow-right {
+  
+  position: absolute;
+  right:2%;
+ z-index: 1
+  
+}
+
+/* round buttons on hover */
+.rec.rec-arrow:hover {
+
+  border-radius: 50%;
+  
+}
+/* hide disabled buttons */
+/*
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}*/
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item{
+  margin:0px;
+
+  width: 100%;
+  height:100%; ;
+}
+
+@media (max-width: 450px) {
+  
+}
+

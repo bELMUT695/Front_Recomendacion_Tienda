@@ -32,10 +32,13 @@ const Home = () => {
         showArrows={false}
         className="HeaderCarrusel"
       >
-        <div className="opciones">
-          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
-          Mujeres
-        </div>
+        <Link className="nav-link" to="/women-top-list">
+          <div className="opciones">
+            <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
+            Mujeres
+          </div>
+        </Link>
+
         <div className="opciones">
           <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497631/Cuerpo_Entero_Women/Home/06_64_gnvjqh.jpg" />
           niñas

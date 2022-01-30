@@ -26,6 +26,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2",
     "wouter": "^2.8.0-alpha.2"
   },

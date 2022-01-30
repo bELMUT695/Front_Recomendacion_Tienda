@@ -88,7 +88,8 @@
   
 }
 
-@media (max-width: 960px) {
+
+@media (max-width: 460px) {
 	.content-order-item {
 		grid-template-columns: repeat(auto-fill, 200px);
 	}

@@ -76,17 +76,21 @@ const Home = () => {
         >
           <img
             className="itemCarrusel"
-            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
+            src="https://res.cloudinary.com/sa-marcos/image/upload/v1643503999/Cuerpo_Entero_Women/Home/Teaser2-xl_sqnmhd.jpg"
           />
 
           <img
             className="itemCarrusel"
-            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_2_1600.jpg"
+            src="https://res.cloudinary.com/sa-marcos/image/upload/v1643504169/Cuerpo_Entero_Women/Home/Teaser3-xl_akhuky.jpg"
           />
 
           <img
             className="itemCarrusel"
-            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
+            src="https://res.cloudinary.com/sa-marcos/image/upload/v1643504221/Cuerpo_Entero_Women/Home/Teaser1-xl_d2rxwo.jpg"
+          />
+          <img
+            className="itemCarrusel"
+            src="https://res.cloudinary.com/sa-marcos/image/upload/v1643504263/Cuerpo_Entero_Women/Home/01_Mainteaser_Extrasale_01_DE-xl_rxatzb.jpg"
           />
         </Carousel>
       </div>

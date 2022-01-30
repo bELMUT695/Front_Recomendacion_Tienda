@@ -71,6 +71,8 @@ const Home = () => {
           autoPlaySpeed={3000}
           enableAutoPlay={true}
           onNextEnd={(currentItem, { pageIndex }) => {}}
+          enableSwipe={false}
+          itemPadding={[0, 2]}
         >
           <img
             className="itemCarrusel"

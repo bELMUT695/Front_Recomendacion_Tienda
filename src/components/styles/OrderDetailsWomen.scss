@@ -85,6 +85,8 @@
   border-bottom: 1px solid #C7C7C7;
   border-left:1px solid #C7C7C7 ;
   border-right:1px solid #C7C7C7 ;
+  width: auto;
+  height: auto;
   
 }
 
@@ -97,5 +99,7 @@
 		width: 60%;	
 		
 	}
-
+  .share-favorite{
+    grid-template-columns:  50% 50%;
+  }
 }

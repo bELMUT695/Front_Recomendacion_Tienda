@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles/OrderDetailsWomen.scss";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import ReactStars from "react-rating-stars-component";
+import UserContext from "../contex/CartContext";
 
 const OrderItem = ({ product }) => {
+  const { addToCart } = useContext(UserContext);
+
+  const handleClick = (item) => {
+    addToCart(item);
+  };
   const options = {
     edit: true,
     color: "rgba(20, 20, 20, 0.1)",
@@ -31,7 +37,11 @@ const OrderItem = ({ product }) => {
             <h1 className="product-description">Descripción</h1>
             <div>{product[0].description}</div>
           </div>
-          <button class="button-55" role="button">
+          <button
+            class="button-55"
+            role="button"
+            onClick={() => handleClick(product)}
+          >
             Agregar al carrito
           </button>
           <div className="share-favorite">

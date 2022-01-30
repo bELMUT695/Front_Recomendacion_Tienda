@@ -73,6 +73,7 @@ const Home = () => {
           onNextEnd={(currentItem, { pageIndex }) => {}}
           enableSwipe={false}
           itemPadding={[0, 2]}
+          enableTilt={true}
         >
           <img
             className="itemCarrusel"
@@ -106,7 +107,7 @@ const Home = () => {
               <Link className="nav-link" to="/women-top-list">
                 <div className="card">
                   <img
-                    src="https://images.ctfassets.net/8397t4ds1z4f/fkh0inIdTG638XTza7LMz/d344f21244f906309098c10dd5b70a3b/tryp_female.jpg?h=1000&w=800&q=50&fm=jpg"
+                    src="https://res.cloudinary.com/sa-marcos/image/upload/v1643506846/Cuerpo_Entero_Women/Home/triple_01_xl_na2p4n.jpg"
                     alt=""
                   />
 

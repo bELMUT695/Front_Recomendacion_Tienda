@@ -186,6 +186,13 @@ a.btn--filled:hover {
   
 }
 
+.HeaderCarrusel{
+  position: sticky;
+  top: 61px;
+  background-color: white;
+  border-bottom: 1px solid #C7C7C7;
+  z-index: 5;
+}
 /* square buttons */
 .rec.rec-arrow-left {
   

@@ -25,59 +25,57 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <main>
-        <section>
-          <Carousel
-            breakPoints={breakPointsOptions}
-            pagination={false}
-            showArrows={false}
-          >
-            <div className="opciones">
-              <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
-              Mujeres
-            </div>
-            <div className="opciones">
-              <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497631/Cuerpo_Entero_Women/Home/06_64_gnvjqh.jpg" />
-              niñas
-            </div>
-            <div className="opciones">
-              <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497730/Cuerpo_Entero_Women/Home/05_64_whnbc7.jpg" />
-              niños
-            </div>
-            <div className="opciones">
-              <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497856/Cuerpo_Entero_Women/Home/03_64_ex84yk.jpg" />
-              Hombres
-            </div>
-            <div className="opciones">
-              <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643498431/Cuerpo_Entero_Women/Home/11_64_oqiza4.jpg" />
-              ofertas
-            </div>
-          </Carousel>
-          <div className="App">
-            <Carousel
-              breakPoints={breakPoints}
-              autoPlaySpeed={3000}
-              enableAutoPlay={true}
-              onNextEnd={(currentItem, { pageIndex }) => {}}
-            >
-              <img
-                className="itemCarrusel"
-                src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
-              />
 
-              <img
-                className="itemCarrusel"
-                src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_2_1600.jpg"
-              />
+      <Carousel
+        breakPoints={breakPointsOptions}
+        pagination={false}
+        showArrows={false}
+        className="HeaderCarrusel"
+      >
+        <div className="opciones">
+          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
+          Mujeres
+        </div>
+        <div className="opciones">
+          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497631/Cuerpo_Entero_Women/Home/06_64_gnvjqh.jpg" />
+          niñas
+        </div>
+        <div className="opciones">
+          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497730/Cuerpo_Entero_Women/Home/05_64_whnbc7.jpg" />
+          niños
+        </div>
+        <div className="opciones">
+          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497856/Cuerpo_Entero_Women/Home/03_64_ex84yk.jpg" />
+          Hombres
+        </div>
+        <div className="opciones">
+          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643498431/Cuerpo_Entero_Women/Home/11_64_oqiza4.jpg" />
+          ofertas
+        </div>
+      </Carousel>
+      <div className="App">
+        <Carousel
+          breakPoints={breakPoints}
+          autoPlaySpeed={3000}
+          enableAutoPlay={true}
+          onNextEnd={(currentItem, { pageIndex }) => {}}
+        >
+          <img
+            className="itemCarrusel"
+            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
+          />
 
-              <img
-                className="itemCarrusel"
-                src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
-              />
-            </Carousel>
-          </div>
-        </section>
-      </main>
+          <img
+            className="itemCarrusel"
+            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_2_1600.jpg"
+          />
+
+          <img
+            className="itemCarrusel"
+            src="https://ph-cdn3.ecosweb.com.br/Web/posthaus/banner_JS/0_0_100207089_1_1600.jpg"
+          />
+        </Carousel>
+      </div>
 
       <div className="titulo2Home">Nuevos looks todos los días</div>
 

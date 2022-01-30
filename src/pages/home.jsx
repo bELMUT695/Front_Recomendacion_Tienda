@@ -32,17 +32,26 @@ const Home = () => {
         showArrows={false}
         className="HeaderCarrusel"
       >
-        <Link className="nav-link" to="/women-top-list">
+        <Link
+          className="nav-link"
+          to="/women-top-list"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
           <div className="opciones">
             <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
             Mujeres
           </div>
         </Link>
-
-        <div className="opciones">
-          <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497631/Cuerpo_Entero_Women/Home/06_64_gnvjqh.jpg" />
-          niñas
-        </div>
+        <Link
+          className="nav-link"
+          to="/ninas-top-list"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          <div className="opciones">
+            <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497631/Cuerpo_Entero_Women/Home/06_64_gnvjqh.jpg" />
+            niñas
+          </div>
+        </Link>
         <div className="opciones">
           <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497730/Cuerpo_Entero_Women/Home/05_64_whnbc7.jpg" />
           niños

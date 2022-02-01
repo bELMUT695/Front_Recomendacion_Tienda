@@ -230,7 +230,49 @@ a.btn--filled:hover {
   height:100%; ;
 }
 
-@media (max-width: 450px) {
+.credi-cart-container{
+  display: grid;
+	grid-template-columns: repeat(auto-fill, 150px);
+	gap: 26px;
+	place-content: center;
+	margin: 1em 0 0 0;
+}
+.credi-cart{
+  display: flex;
+  justify-content: center;
+   height:45px;
+   padding-bottom: 19px;
   
+ 
+}
+.container-credicard{
+  border-top: 1px solid #C7C7C7;
+  border-bottom: 1px solid #C7C7C7;
+  margin-bottom: 15px;
+}
+.title-credi-card {
+ 
+  color: rgb(51, 51, 51);
+  font-size: 17.5px;
+  font-family: "Open Sans", arial, sans-serif;
+  font-weight: 600;
+ 
+  margin: 0px 15px ;
+}
+@media (max-width: 450px) {
+  .credi-cart-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px);
+    gap: 26px;
+    place-content: center;
+    margin: 3em 0 0 0;
+  }
+  .credi-cart{
+  display: flex;
+  justify-content: center;
+   height:35px;
+   padding-bottom: 19px;
+  
+}
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
@@ -20,7 +20,7 @@ const breakPointsOptions = [
   { width: 1200, itemsToShow: 5 },
 ];
 const Home = () => {
-  const [state, setState] = useState(1);
+  const [state, setState] = useState(0);
 
   return (
     <>
@@ -70,10 +70,14 @@ const Home = () => {
           breakPoints={breakPoints}
           autoPlaySpeed={3000}
           enableAutoPlay={true}
-          onNextEnd={(currentItem, { pageIndex }) => {}}
+          onNextEnd={(currentItem, pageIndex) => {
+            setState(pageIndex);
+            console.log(state);
+          }}
           enableSwipe={false}
           itemPadding={[0, 2]}
           enableTilt={true}
+          initialActiveIndex={state}
         >
           <img
             className="itemCarrusel"
@@ -131,7 +135,64 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div class="container-credicard">
+        <h3 class="title-credi-card">Formas de pagamento</h3>
+        <div class="credi-cart-container">
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-mastercard.png"
+              alt="MasterCard"
+              class="sc-kafWEX jIDZms"
+            />
+          </div>
 
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-visa.png"
+              alt="Visa"
+              class="sc-kafWEX jIDZms"
+            />
+          </div>
+
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-amex.png"
+              alt="American Express"
+              class="sc-kafWEX jIDZms"
+            />
+          </div>
+
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-caixa.png"
+              alt="CaixaTem"
+              class="sc-kafWEX jIDZms"
+            />
+          </div>
+
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/icons/ic-discover.png"
+              alt="Discover"
+              class="sc-kafWEX jIDZms"
+            />
+          </div>
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/store/posthaus/google-play-badge.svg"
+              alt="Link para Google Play Store"
+              class="sc-jtRfpW hbIeFo"
+            />
+          </div>
+          <div class="credi-cart">
+            <img
+              src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/store/posthaus/app-store-badge.svg"
+              alt="Link para App Store"
+              class="sc-jtRfpW hbIeFo"
+            />
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );

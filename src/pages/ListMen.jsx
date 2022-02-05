@@ -1,15 +1,14 @@
-import React from 'react';
-import ListItemMen from '../container/ListItemMen';
+import React from "react";
+import ListItemMen from "../container/ListItemMen";
+import AuthContext from "../contex/AuthContext";
+const ListMen = (props) => {
+  const { auth } = useContext(AuthContext);
 
-const ListMen =()=>{
-     
-    
-    return(
-        <div className="listArticulosWomen">
-            
-            <ListItemMen/>
-        </div>
-    );
-}
+  return (
+    <div className="listArticulosWomen">
+      {auth ? <ListItemMen /> : props.history.push("/login")}
+    </div>
+  );
+};
 
- export default ListMen;
+export default ListMen;

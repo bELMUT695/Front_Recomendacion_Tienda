@@ -5,7 +5,7 @@ import useSingleWomen from "../hooks/useSingleWome";
 import Spinner from "../components/Spinner";
 import ProductDetails from "../components/OrderItemDeatils";
 import AuthContext from "../contex/AuthContext";
-const OrderItem = ({ params }) => {
+const OrderItem = (props) => {
   const { auth } = useContext(AuthContext);
   const { id } = useParams();
   const { isLoading, itemWomem } = useSingleWomen(id);

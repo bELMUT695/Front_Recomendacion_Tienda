@@ -27,46 +27,40 @@ const App = () => {
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
-            {auth ? (
-              <Route path="/men-top-list/:path?">
-                <LayoutMen>
-                  <Switch>
-                    <Route
-                      exact
-                      path="/men-top-list"
-                      component={auth ? ListMen : Login}
-                    />
-                    <Route
-                      path="/men-top-list/:id"
-                      component={auth ? OrderItemMen : Login}
-                    />
-                  </Switch>
-                </LayoutMen>
-              </Route>
-            ) : (
-              <Route exact path="/login" component={Login} />
-            )}
-            {auth ? (
-              <Layout>
+
+            <Route path="/men-top-list/:path?">
+              <LayoutMen>
                 <Switch>
                   <Route
                     exact
-                    path="/women-top-list"
-                    component={auth ? ListWomen : Login}
+                    path="/men-top-list"
+                    component={auth ? ListMen : Login}
                   />
                   <Route
-                    path="/women-top-list/:id"
-                    component={auth ? OrderItemWomen : Login}
-                  />
-                  <Route
-                    path="/cola-de-compras"
-                    component={auth ? MyOrderClothes : Login}
+                    path="/men-top-list/:id"
+                    component={auth ? OrderItemMen : Login}
                   />
                 </Switch>
-              </Layout>
-            ) : (
-              <Route exact path="/login" component={Login} />
-            )}
+              </LayoutMen>
+            </Route>
+
+            <Layout>
+              <Switch>
+                <Route
+                  exact
+                  path="/women-top-list"
+                  component={auth ? ListWomen : Login}
+                />
+                <Route
+                  path="/women-top-list/:id"
+                  component={auth ? OrderItemWomen : Login}
+                />
+                <Route
+                  path="/cola-de-compras"
+                  component={auth ? MyOrderClothes : Login}
+                />
+              </Switch>
+            </Layout>
           </Switch>
         </BrowserRouter>
       </AuthContext.Provider>

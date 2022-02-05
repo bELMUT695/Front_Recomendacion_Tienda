@@ -12,7 +12,7 @@ import useInitialState from "../hooks/useInitialCart";
 import CartContext from "../contex/CartContext";
 import MyOrderClothes from "../pages/MyOrderClothes";
 import useInitialAuth from "../hooks/useInitialAuth";
-
+import AuthContext from "../contex/AuthContext";
 //import Navbar from '../components/Navbar'
 
 const App = () => {

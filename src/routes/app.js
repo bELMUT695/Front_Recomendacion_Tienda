@@ -31,34 +31,17 @@ const App = () => {
             <Route path="/men-top-list/:path?">
               <LayoutMen>
                 <Switch>
-                  <Route
-                    exact
-                    path="/men-top-list"
-                    component={auth ? ListMen : Login}
-                  />
-                  <Route
-                    path="/men-top-list/:id"
-                    component={auth ? OrderItemMen : Login}
-                  />
+                  <Route exact path="/men-top-list" component={ListMen} />
+                  <Route path="/men-top-list/:id" component={OrderItemMen} />
                 </Switch>
               </LayoutMen>
             </Route>
 
             <Layout>
               <Switch>
-                <Route
-                  exact
-                  path="/women-top-list"
-                  component={auth ? ListWomen : Login}
-                />
-                <Route
-                  path="/women-top-list/:id"
-                  component={auth ? OrderItemWomen : Login}
-                />
-                <Route
-                  path="/cola-de-compras"
-                  component={auth ? MyOrderClothes : Login}
-                />
+                <Route exact path="/women-top-list" component={ListWomen} />
+                <Route path="/women-top-list/:id" component={OrderItemWomen} />
+                <Route path="/cola-de-compras" component={MyOrderClothes} />
               </Switch>
             </Layout>
           </Switch>

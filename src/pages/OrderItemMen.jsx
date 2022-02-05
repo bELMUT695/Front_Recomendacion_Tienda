@@ -1,30 +1,34 @@
-import React, { Fragment } from 'react';
-import {useParams} from 'react-router-dom';
+import React, { Fragment, useContext } from "react";
+import { useParams } from "react-router-dom";
 
-import useSingleWomen from '../hooks/useSingleWome';
-import Spinner from '../components/Spinner';
-import ProductDetails  from '../components/OrderItemDeatils';
-
-const OrderItem =({ params })=>{
-
+import useSingleWomen from "../hooks/useSingleWome";
+import Spinner from "../components/Spinner";
+import ProductDetails from "../components/OrderItemDeatils";
+import AuthContext from "../contex/AuthContext";
+const OrderItem = ({ params }) => {
+  const { auth } = useContext(AuthContext);
   const { id } = useParams();
-  const { isLoading, itemWomem } = useSingleWomen(id)
+  const { isLoading, itemWomem } = useSingleWomen(id);
 
-  console.log(isLoading,"fdfkgldkf");
+  console.log(isLoading, "fdfkgldkf");
 
-  if (isLoading || (!itemWomem)) {
+  if (isLoading || !itemWomem) {
     console.log("HHHHHHHHHH");
     return (
       <Fragment>
         <Spinner />
       </Fragment>
-    )
+    );
   }
 
-  console.log(itemWomem[0].description ,"GGG")
-  return(
+  console.log(itemWomem[0].description, "GGG");
+  return (
     <div>
-      <ProductDetails product={itemWomem}  />
+      {auth ? (
+        <ProductDetails product={itemWomem} />
+      ) : (
+        props.history.push("/login")
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "../pages/login";
 import Home from "../pages/home";
@@ -12,12 +12,10 @@ import useInitialState from "../hooks/useInitialCart";
 import CartContext from "../contex/CartContext";
 import MyOrderClothes from "../pages/MyOrderClothes";
 import useInitialAuth from "../hooks/useInitialAuth";
-import AuthContext from "../contex/AuthContext";
 
 //import Navbar from '../components/Navbar'
 
 const App = () => {
-  const { auth } = useContext(AuthContext);
   const initialState = useInitialState();
   const useinitialAuth = useInitialAuth();
   return (

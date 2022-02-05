@@ -8,7 +8,7 @@ import UserContext from "../contex/CartContext";
 
 const OrderItem = ({ product }) => {
   const { addToCart } = useContext(UserContext);
-
+  console.log(useContext(UserContext));
   const handleClick = (item) => {
     addToCart(item);
   };

@@ -11,36 +11,40 @@ import OrderItemMen from "../pages/OrderItemMen.jsx";
 import useInitialState from "../hooks/useInitialCart";
 import CartContext from "../contex/CartContext";
 import MyOrderClothes from "../pages/MyOrderClothes";
+import useInitialAuth from "../hooks/useInitialAuth";
+import AuthContext from "../contex/AuthContext";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
   const initialState = useInitialState();
-
+  const useinitialAuth = useInitialAuth();
   return (
     <CartContext.Provider value={initialState}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/home" component={Home} />
+      <AuthContext.Provider value={useinitialAuth}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/home" component={Home} />
 
-          <Route path="/men-top-list/:path?">
-            <LayoutMen>
+            <Route path="/men-top-list/:path?">
+              <LayoutMen>
+                <Switch>
+                  <Route exact path="/men-top-list" component={ListMen} />
+                  <Route path="/men-top-list/:id" component={OrderItemMen} />
+                </Switch>
+              </LayoutMen>
+            </Route>
+
+            <Layout>
               <Switch>
-                <Route exact path="/men-top-list" component={ListMen} />
-                <Route path="/men-top-list/:id" component={OrderItemMen} />
+                <Route exact path="/women-top-list" component={ListWomen} />
+                <Route path="/women-top-list/:id" component={OrderItemWomen} />
+                <Route path="/cola-de-compras" component={MyOrderClothes} />
               </Switch>
-            </LayoutMen>
-          </Route>
-
-          <Layout>
-            <Switch>
-              <Route exact path="/women-top-list" component={ListWomen} />
-              <Route path="/women-top-list/:id" component={OrderItemWomen} />
-              <Route path="/cola-de-compras" component={MyOrderClothes} />
-            </Switch>
-          </Layout>
-        </Switch>
-      </BrowserRouter>
+            </Layout>
+          </Switch>
+        </BrowserRouter>
+      </AuthContext.Provider>
     </CartContext.Provider>
   );
 };

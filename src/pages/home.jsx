@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
 import header1 from "./images/header-1.png";
 import Footer from "../components/Footer";
 import Carousel from "react-elastic-carousel";
-
+import AuthContext from "../contex/AuthContext";
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 1 },
@@ -21,7 +21,7 @@ const breakPointsOptions = [
 ];
 const Home = () => {
   const [state, setState] = useState(0);
-
+  const { auth } = useContext(AuthContext);
   return (
     <>
       <Navbar />
@@ -42,6 +42,7 @@ const Home = () => {
             Mujeres
           </div>
         </Link>
+
         <Link
           className="nav-link"
           to="/ninas-top-list"
@@ -108,7 +109,10 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <Link className="nav-link" to="/women-top-list">
+              <Link
+                className="nav-link"
+                to={auth ? "/women-top-list" : "/login"}
+              >
                 <div className="card">
                   <img
                     src="https://res.cloudinary.com/sa-marcos/image/upload/v1643506846/Cuerpo_Entero_Women/Home/triple_01_xl_na2p4n.jpg"
@@ -121,7 +125,7 @@ const Home = () => {
             </div>
 
             <div className="col-md-6">
-              <Link className="nav-link" to="/men-top-list ">
+              <Link className="nav-link" to={auth ? "/men-top-list" : "/login"}>
                 <div className="card">
                   <img
                     src="https://images.ctfassets.net/8397t4ds1z4f/3lVMQ2dht9TISIixwuPA0M/b25f061a70dabdf9aece97aa11fa76c6/tryp_male.jpg?h=1000&w=800&q=50&fm=jpg"

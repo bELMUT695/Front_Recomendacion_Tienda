@@ -119,7 +119,39 @@ const Home = () => {
                     alt=""
                   />
 
-                  <h5 class="card-title">Clothe Women</h5>
+                  <div className="continer-category-type">
+                    <span className="card-title">MUJER</span>
+                    <div className="details-card">
+                      <div className="circle"></div>
+                      <span className="title-ofert-add">
+                        17 ofertas disponibles ahora mismo
+                      </span>
+                    </div>
+
+                    <div className="details-card">
+                      <div className="cruz-card">
+                        <svg height="12px" width="12px" viewBox="0 0 12 12">
+                          <path
+                            d="M1 6H11"
+                            stroke="#AAABB1"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                          <path
+                            d="M6 1L6 11"
+                            stroke="#AAABB1"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
+                      </div>
+
+                      <span className="title-ofert-add">
+                        {" "}
+                        4 nuevas ofertas empiezan mañana
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -132,7 +164,36 @@ const Home = () => {
                     alt=""
                   />
 
-                  <h5 class="card-title">Clothe Men</h5>
+                  <div className="continer-category-type">
+                    <span className="card-title">HOMBRE</span>
+                    <div className="details-card">
+                      <div className="circle"></div>
+                      <span className="title-ofert-add">
+                        15 ofertas disponibles ahora mismo
+                      </span>
+                    </div>
+                    <div className="details-card">
+                      <div className="cruz-card">
+                        <svg height="12px" width="12px" viewBox="0 0 12 12">
+                          <path
+                            d="M1 6H11"
+                            stroke="#AAABB1"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                          <path
+                            d="M6 1L6 11"
+                            stroke="#AAABB1"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
+                      </div>
+                      <span className="title-ofert-add">
+                        4 nuevas ofertas empiezan mañana
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -140,7 +201,7 @@ const Home = () => {
         </div>
       </div>
       <div class="container-credicard">
-        <h3 class="title-credi-card">Formas de pagamento</h3>
+        <h3 class="title-credi-card">Formas de pago</h3>
         <div class="credi-cart-container">
           <div class="credi-cart">
             <img

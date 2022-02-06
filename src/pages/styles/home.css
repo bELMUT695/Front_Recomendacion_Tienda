@@ -197,6 +197,7 @@ a.btn--filled:hover {
   background-color: rgb(255, 255, 255);
   padding: 20px;
   position: absolute;
+  
   top:45%;
     
 }
@@ -210,6 +211,8 @@ a.btn--filled:hover {
     text-align: center;
     display: grid;
     grid-template-columns: auto auto auto;
+    height: 100%;
+    width: 100%;
 }
 .card-title{
   font-family: "PT Serif", serif;

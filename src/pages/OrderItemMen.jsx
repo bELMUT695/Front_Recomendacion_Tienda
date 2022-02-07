@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { useParams } from "react-router-dom";
-
+import { render, Text } from "ink";
+import Spinner from "ink-spinner";
 import useSingleWomen from "../hooks/useSingleWome";
 import Spinner from "../components/Spinner";
 import ProductDetails from "../components/OrderItemDeatils";
@@ -15,9 +16,12 @@ const OrderItem = (props) => {
   if (isLoading || !itemWomem) {
     console.log("HHHHHHHHHH");
     return (
-      <Fragment>
-        <Spinner />
-      </Fragment>
+      <Text>
+        <Text color="green">
+          <Spinner type="dots" />
+        </Text>
+        {" Loading"}
+      </Text>
     );
   }
 

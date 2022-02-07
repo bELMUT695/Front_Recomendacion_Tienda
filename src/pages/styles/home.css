@@ -47,7 +47,9 @@ h5 {
   padding: 0;
 }
 
-
+.App{
+  z-index: 2;
+}
 img {
   display: block;
   max-width: 100%;
@@ -115,6 +117,21 @@ float: left;
         align-self: center;
   }
 }
+
+.nav-options-women{
+  
+  position:absolute;
+ 
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  display: flex; align-items: center; justify-content: center; 
+  width: 80%;
+  margin-left: 10%;
+  z-index: 10;
+ 
+}
+
 
 
 
@@ -245,7 +262,8 @@ a.btn--filled:hover {
 }
 
 .HeaderCarrusel{
-  position: sticky;
+ 
+  height: 95px;
   top: 61px;
   background-color: white;
   border-bottom: 1px solid #C7C7C7;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Category.scss";
+import "./styles/Category-women.scss";
 const Category = () => {
   return (
     <div className="mobile-menu">
@@ -26,6 +26,13 @@ const Category = () => {
           <a href="/">Other</a>
         </li>
       </ul>
+      <div>
+        <img
+          className="img-nav-women-option"
+          src="https://ph-cdn3.ecosweb.com.br/imagens01/pwa/assets/store/posthaus/img-categorias_1.jpg"
+          alt=""
+        />
+      </div>
     </div>
   );
 };

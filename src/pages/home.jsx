@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
 import header1 from "./images/header-1.png";
+import Category from "../components/Category-women";
 import Footer from "../components/Footer";
 import Carousel from "react-elastic-carousel";
 import AuthContext from "../contex/AuthContext";
@@ -21,6 +22,7 @@ const breakPointsOptions = [
 ];
 const Home = () => {
   const [state, setState] = useState(0);
+  const [click, setClick] = useState(false);
   const { auth } = useContext(AuthContext);
   return (
     <>
@@ -37,7 +39,11 @@ const Home = () => {
           to="/women-top-list"
           style={{ color: "inherit", textDecoration: "none" }}
         >
-          <div className="opciones">
+          <div
+            className="opciones"
+            onMouseEnter={() => setClick(true)}
+            onMouseLeave={() => setClick(false)}
+          >
             <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497558/Cuerpo_Entero_Women/Home/01_64_febzef.jpg" />
             Mujeres
           </div>
@@ -66,6 +72,13 @@ const Home = () => {
           ofertas
         </div>
       </Carousel>
+      <div
+        className="nav-options-women"
+        onMouseEnter={() => setClick(true)}
+        onMouseLeave={() => setClick(false)}
+      >
+        {click ? <Category /> : []}
+      </div>
       <div className="App">
         <Carousel
           breakPoints={breakPoints}

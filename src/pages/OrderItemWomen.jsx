@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useSingleWomen from "../hooks/useSingleWome";
 import Spinner from "../components/Spinner";
+import { render, Text } from "ink";
+import Spinner from "ink-spinner";
 import ProductDetails from "../components/OrderItemDeatils";
 import AuthContext from "../contex/AuthContext";
 const OrderItem = (props) => {
@@ -12,9 +14,12 @@ const OrderItem = (props) => {
   if (isLoading || !itemWomem) {
     console.log("HHHHHHHHHH");
     return (
-      <>
-        <Spinner />
-      </>
+      <Text>
+        <Text color="green">
+          <Spinner type="dots" />
+        </Text>
+        {" Loading"}
+      </Text>
     );
   }
 

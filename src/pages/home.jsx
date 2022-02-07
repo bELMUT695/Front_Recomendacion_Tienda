@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
-import header1 from "./images/header-1.png";
+
 import Category from "../components/Category-women";
 import Footer from "../components/Footer";
 import Carousel from "react-elastic-carousel";
@@ -271,6 +271,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );

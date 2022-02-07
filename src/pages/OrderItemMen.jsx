@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import useSingleWomen from "../hooks/useSingleWome";
-import { Spinner } from "@chakra-ui/react";
+import Loader from "../components/loader/Loader";
 import ProductDetails from "../components/OrderItemDeatils";
 import AuthContext from "../contex/AuthContext";
 const OrderItem = (props) => {
@@ -16,7 +16,7 @@ const OrderItem = (props) => {
     console.log("HHHHHHHHHH");
     return (
       <Fragment>
-        <Spinner />
+        <Loader />
       </Fragment>
     );
   }

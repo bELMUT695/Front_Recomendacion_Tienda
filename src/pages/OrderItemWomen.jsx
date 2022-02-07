@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useSingleWomen from "../hooks/useSingleWome";
-import Spinner from "../components/Spinner";
+
 import { render, Text } from "ink";
 import Spinner from "ink-spinner";
 import ProductDetails from "../components/OrderItemDeatils";

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { render, Text } from "ink";
 import Spinner from "ink-spinner";
 import useSingleWomen from "../hooks/useSingleWome";
-import Spinner from "../components/Spinner";
 import ProductDetails from "../components/OrderItemDeatils";
 import AuthContext from "../contex/AuthContext";
 const OrderItem = (props) => {

@@ -8,15 +8,12 @@ import Loader from "../components/loader/Loader";
 import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
-import { useState } from "react";
+
 const ListItemWomen = () => {
-  const [isLoading, SetLoading] = useState(true);
-  const products = ItemsWomen(API);
-  if (products) {
-    SetLoading(false);
-  }
+  const { products, isLoading } = ItemsWomen(API);
+
   if (isLoading) {
-    <Loader />;
+    return <Loader />;
   }
   return (
     <div className="wrap">

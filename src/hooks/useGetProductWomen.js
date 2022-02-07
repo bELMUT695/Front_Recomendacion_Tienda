@@ -8,7 +8,7 @@ const useGetProductWomen = (API) => {
   useEffect(async () => {
     const response = await axios(API);
     setProducts(response.data.data);
-    console.log(response.data.data);
+
     SetLoading(false);
   }, []);
 

@@ -22,8 +22,8 @@ export const Login = (props) => {
     const apiKeyToken =
       "2a28bce095a75eabced9c8467460af0fe40acb1359a279f6de465575dd721639";
     console.log(datos.email, datos.password);
-    await axios({
-      //url:'http://localhost:3001/api/auth/sign-in/',
+    const user = await axios({
+      //url: "http://localhost:3001/api/auth/sign-in/",
 
       url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-in/",
 
@@ -37,8 +37,11 @@ export const Login = (props) => {
         password: datos.password,
       },
     }).then(({ data }) => {
-      login(datos);
-      props.history.push("/home");
+      login(data);
+      props.history.push({
+        pathname: "/home",
+        state: { detail: data },
+      });
     });
   };
   return (

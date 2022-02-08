@@ -26,7 +26,15 @@
 	margin-bottom: 0;
 	color: var(--very-light-pink);
 }
-
+.zise-nrating{
+	font-size:15px;
+	color: var(--very-light-pink);
+}
+.rating{
+	display: flex;
+	align-items: center;
+	
+}
 @media (max-width: 640px) {
 	.cards-container {
 		grid-template-columns: repeat(auto-fill, 140px);

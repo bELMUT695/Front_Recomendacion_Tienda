@@ -3,11 +3,14 @@ import { Rating } from "@material-ui/lab";
 import "./styles/ItemWomen.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-
+import useGetRatingByClothe from "../hooks/useGetRatingByClothe";
 const ItemWomen = ({ product }) => {
-  console.log(product);
+  const { listItemWomem, isLoading, nrating } = useGetRatingByClothe(
+    product._id
+  );
+  console.log(product._id);
   const options = {
-    value: 3.5,
+    value: listItemWomem,
     readOnly: true,
     precision: 0.5,
   };
@@ -28,7 +31,10 @@ const ItemWomen = ({ product }) => {
         </figure>
       </div>
       <div className="rating">
-        <Rating {...options} />
+        <div>
+          <Rating {...options} />
+        </div>
+        <h1 className="zise-nrating"> {nrating} calificados</h1>
       </div>
     </div>
   );

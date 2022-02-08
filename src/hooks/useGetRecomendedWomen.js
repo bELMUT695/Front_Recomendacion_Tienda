@@ -5,7 +5,9 @@ const useGetRecomendedWomen = () => {
   const [listItemWomem, setListItemWomem] = useState([]);
   const [isLoading, SetLoading] = useState(true);
   useEffect(async () => {
-    const response = await axios("http://localhost:3001/api/rating");
+    const response = await axios(
+      "https://front-recomendacion-contenidos.herokuapp.com/api/rating"
+    );
     console.log(response.data.data);
 
     setListItemWomem(response.data.data, "FFF");

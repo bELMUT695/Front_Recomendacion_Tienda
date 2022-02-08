@@ -13,6 +13,7 @@ import CartContext from "../contex/CartContext";
 import MyOrderClothes from "../pages/MyOrderClothes";
 import useInitialAuth from "../hooks/useInitialAuth";
 import AuthContext from "../contex/AuthContext";
+import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -40,6 +41,10 @@ const App = () => {
                 <Route exact path="/women-top-list" component={ListWomen} />
                 <Route path="/women-top-list/:id" component={OrderItemWomen} />
                 <Route path="/cola-de-compras" component={MyOrderClothes} />
+                <Route
+                  path="/recommended-clothe"
+                  component={Listrecomendedwomen}
+                />
               </Switch>
             </Layout>
           </Switch>

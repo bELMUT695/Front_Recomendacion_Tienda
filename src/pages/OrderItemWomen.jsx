@@ -18,14 +18,9 @@ const OrderItem = (props) => {
     );
   }
 
-  console.log(itemWomem[0].description, "GGG");
   return (
     <div>
-      {auth ? (
-        <ProductDetails product={itemWomem} />
-      ) : (
-        props.history.push("/login")
-      )}
+      <ProductDetails product={itemWomem} />
     </div>
   );
 };

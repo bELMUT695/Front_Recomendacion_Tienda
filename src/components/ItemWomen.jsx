@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 const ItemWomen = ({ product }) => {
-  console.log(product.image.URL);
+  console.log(product);
   const options = {
     value: 3.5,
     readOnly: true,

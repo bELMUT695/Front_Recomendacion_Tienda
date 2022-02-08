@@ -17,9 +17,10 @@ const useGetRatingByClothe = (id) => {
     }
     console.log(response.data.data);
     const valueMediaRating = acumladorRating / response.data.data.length;
-
+    const nratingclotes = response.data.data.length;
+    console.log(nratingclotes);
     setListItemWomem(valueMediaRating);
-    setRating(response.data.data.length);
+    setRating(nratingclotes);
     console.log(valueMediaRating);
     SetLoading(false);
   }, []);

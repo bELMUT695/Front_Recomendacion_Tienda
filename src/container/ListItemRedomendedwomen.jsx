@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import useGetRecomendedWomen from "../hooks/useGetRecomendedWomen";
 import ItemWomen from "../components/ItemWomen";
 import Loader from "../components/loader/Loader";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
+import AuthContext from "../contex/AuthContext";
 const ListItemRedomendedwomen = () => {
-  const { listItemWomem, isLoading } = useGetRecomendedWomen();
+  const { auth } = useContext(AuthContext);
+  console.log(auth.user.id, "FFFFFFFFFFSDFW");
+  const { listItemWomem, isLoading } = useGetRecomendedWomen(auth.user.id);
 
   if (isLoading) {
     return <Loader />;

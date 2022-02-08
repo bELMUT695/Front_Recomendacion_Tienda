@@ -6,7 +6,7 @@ const useGetRecomendedWomen = () => {
   const [isLoading, SetLoading] = useState(true);
   useEffect(async () => {
     const response = await axios(
-      "https://front-recomendacion-contenidos.herokuapp.com/api/rating"
+      "https://back-tienda-electronica.herokuapp.com/api/rating"
     );
     console.log(response.data.data);
 

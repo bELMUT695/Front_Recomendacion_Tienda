@@ -79,22 +79,34 @@ const Navbar = () => {
               </li>
 
               <ul className="options-account">
-                <div className="title-options-account">CUENTA</div>
-
                 <div className="user-name-account">
                   <h3 className="user1-name-account">
                     Hola,{auth ? auth.user.first_name : []}
                   </h3>
                 </div>
-                <li>
-                  <a>Perfil</a>
-                </li>
-                <li>
-                  <a>Pedidos</a>
-                </li>
-                <li>
-                  <a>favoritos</a>
-                </li>
+                <Link
+                  to="/account"
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <li className="title-options-account">
+                    <a>Cuenta</a>
+                  </li>
+                </Link>
+                <Link style={{ color: "inherit", textDecoration: "none" }}>
+                  <li>
+                    <a>Perfil</a>
+                  </li>
+                </Link>
+                <Link style={{ color: "inherit", textDecoration: "none" }}>
+                  <li>
+                    <a>Pedidos</a>
+                  </li>
+                </Link>
+                <Link style={{ color: "inherit", textDecoration: "none" }}>
+                  <li>
+                    <a>favoritos</a>
+                  </li>
+                </Link>
               </ul>
             </div>
           ) : (

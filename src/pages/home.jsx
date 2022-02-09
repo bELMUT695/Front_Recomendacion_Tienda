@@ -4,6 +4,7 @@ import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
 
 import Category from "../components/Category-women";
+import CategoryMen from "../components/Category-men";
 import Footer from "../components/Footer";
 import Carousel from "react-elastic-carousel";
 import AuthContext from "../contex/AuthContext";
@@ -23,6 +24,7 @@ const breakPointsOptions = [
 const Home = () => {
   const [state, setState] = useState(0);
   const [click, setClick] = useState(false);
+  const [clickMen, setClickMen] = useState(false);
   const { auth } = useContext(AuthContext);
   return (
     <>
@@ -63,7 +65,11 @@ const Home = () => {
           <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497730/Cuerpo_Entero_Women/Home/05_64_whnbc7.jpg" />
           niños
         </div>
-        <div className="opciones">
+        <div 
+          className="opciones"
+          onMouseEnter={() => setClickMen(true)}
+          onMouseLeave={() => setClickMen(false)}
+        >
           <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497856/Cuerpo_Entero_Women/Home/03_64_ex84yk.jpg" />
           Hombres
         </div>
@@ -72,6 +78,7 @@ const Home = () => {
           ofertas
         </div>
       </Carousel>
+
       <div
         className="nav-options-women"
         onMouseEnter={() => setClick(true)}
@@ -79,6 +86,15 @@ const Home = () => {
       >
         {click ? <Category /> : []}
       </div>
+
+      <div
+        className="nav-options-men"
+        onMouseEnter={() => setClickMen(true)}
+        onMouseLeave={() => setClickMen(false)}
+      >
+        {clickMen ? <CategoryMen /> : []}
+      </div>
+
       <div className="App">
         <Carousel
           breakPoints={breakPoints}

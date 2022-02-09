@@ -4,6 +4,7 @@ import "./styles/ItemMen.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
+import useGetRatingByClothe from "../hooks/useGetRatingByClothe";
 
 const ItemMen = ({ product }) => {
 
@@ -13,6 +14,8 @@ const ItemMen = ({ product }) => {
     precision: 0.5,
   };
 
+  const { listItemWomem, isLoading, nrating } 
+    = useGetRatingByClothe(product._id);
 
   return (
     <div className="ProductItem">
@@ -36,7 +39,10 @@ const ItemMen = ({ product }) => {
       </div>
 
       <div className="rating">
-        <Rating {...options} />
+        <div>
+          <Rating {...options} />
+        </div>
+        <h1 className="zise-nrating"> {nrating} calificados</h1>
       </div>
     </div>
   );

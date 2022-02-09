@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useContext } from "react";
+import { Link } from 'react-router-dom';
 import "./styles/login.css";
 import axios from "axios";
 import AuthContext from "../contex/AuthContext";
@@ -76,9 +77,12 @@ export const Login = (props) => {
             </div>
 
             <h1 className="mensaje">¿Eres nuevo en EbookNet?</h1>
-            <button className="buttonlog" type="submit">
-              Crea su cuenta{" "}
-            </button>
+            <Link to="/register">
+              <button className="buttonlog" type="submit">
+                Crea su cuenta{" "}
+              </button>
+            </Link>
+            
           </form>
         </section>
       </section>

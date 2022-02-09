@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "../pages/login";
+import Register from "../pages/register";
 import Home from "../pages/home";
 import ListWomen from "../pages/ListWomen";
 import ListMen from "../pages/ListMen";
@@ -14,6 +15,7 @@ import MyOrderClothes from "../pages/MyOrderClothes";
 import useInitialAuth from "../hooks/useInitialAuth";
 import AuthContext from "../contex/AuthContext";
 import Listrecomendedwomen from "../pages/Listrecomendedwomen";
+import Listrecomendedmen from "../pages/Listrecomendedmen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -25,28 +27,36 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/home" component={Home} />
 
-            <Route path="/men-top-list/:path?">
+            <Route path={["/men-top-list/:path?", "/recomendacion", "/todo"]}>
               <LayoutMen>
                 <Switch>
                   <Route exact path="/men-top-list" component={ListMen} />
                   <Route path="/men-top-list/:id" component={OrderItemMen} />
+                  <Route exact
+                    path="/recomendacion"
+                    component={Listrecomendedmen}
+                  />
                 </Switch>
               </LayoutMen>
             </Route>
 
-            <Layout>
-              <Switch>
-                <Route exact path="/women-top-list" component={ListWomen} />
-                <Route path="/women-top-list/:id" component={OrderItemWomen} />
-                <Route path="/cola-de-compras" component={MyOrderClothes} />
-                <Route
-                  path="/recommended-clothe"
-                  component={Listrecomendedwomen}
-                />
-              </Switch>
-            </Layout>
+            <Route path={["/women-top-list/:path?", "/recommended-clothe", "/cola-de-compras", "/all-clothes"]}>
+              <Layout>
+                <Switch>
+                  <Route exact path="/women-top-list" component={ListWomen} />
+                  <Route path="/women-top-list/:id" component={OrderItemWomen} />
+                  <Route path="/cola-de-compras" component={MyOrderClothes} />
+                  <Route
+                    path="/recommended-clothe"
+                    component={Listrecomendedwomen}
+                  />
+                </Switch>
+              </Layout>
+            </Route>
+
           </Switch>
         </BrowserRouter>
       </AuthContext.Provider>

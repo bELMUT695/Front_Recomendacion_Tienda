@@ -11,11 +11,15 @@ const Navbar = () => {
 
   return (
     <nav className={click ? "nav-women1" : "nav-women"}>
-      <div onClick={handleClick}>
-        <img src={menu} alt="menu" className="menu" />
-      </div>
+      <div className="container-logo-menu">
+        <Link className="Logo-nabvar-women" to="/home">
+          <img src={logo} alt="logo" className="logo-nav" />
+        </Link>
 
-      <img src={logo} alt="logo" className="logo-nav" />
+        <div onClick={handleClick}>
+          <img src={menu} alt="menu" className="menu" />
+        </div>
+      </div>
 
       <div className={click ? "navbar-left active" : "navbar-left"}>
         <ul>
@@ -23,10 +27,10 @@ const Navbar = () => {
             <Link to="/men-top-list">best selling clothes</Link>
           </li>
           <li>
-            <Link to="/men-top-list/all-clothes">AllClothes</Link>
+            <Link to="/todo">AllClothes</Link>
           </li>
           <li>
-            <Link to="/men-top-list/recommended-clothes">Recommended Clothes</Link>
+            <Link to="/recomendacion">Recommended Clothes</Link>
           </li>
         </ul>
       </div>

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import ListItemRedomendedwomen from "../container/ListItemRedomendedwomen";
-const Listrecomendedwomen = () => {
+import AuthContext from "../contex/AuthContext";
+const Listrecomendedwomen = (props) => {
+  const { auth } = useContext(AuthContext);
   return (
     <div>
-      <ListItemRedomendedwomen />
+      {auth ? <ListItemRedomendedwomen /> : props.history.push("/login")}
     </div>
   );
 };

@@ -33,7 +33,7 @@ const NavbarHome = () => {
           {auth ? (
             <div className="constainer-options-account">
               <li className="navbar-shopping-cart">
-                <Link to="/login">
+                <Link to="/account">
                   {/* <FontAwesomeIcon icon={faUser} className="faUser" /> */}
                   <svg viewBox="0 0 32 32" width="32px" height="32px">
                     <path

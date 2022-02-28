@@ -6,7 +6,7 @@ import './styles/auth.css';
 import AuthContext from "../contex/AuthContext";
 
 
-export const Login = (props) => {
+const Login = (props) => {
 
   const { login } = useContext(AuthContext);
   console.log(useContext(AuthContext));
@@ -29,7 +29,7 @@ export const Login = (props) => {
     const apiKeyToken =
       "2a28bce095a75eabced9c8467460af0fe40acb1359a279f6de465575dd721639";
     console.log(datos.email, datos.password);
-    
+
     const user = await axios({
       //url: "http://localhost:3001/api/auth/sign-in/",
 

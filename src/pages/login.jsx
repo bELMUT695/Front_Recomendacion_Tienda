@@ -45,10 +45,7 @@ export const Login = (props) => {
       },
     }).then(({ data }) => {
       login(data);
-      props.history.push({
-        name: "/home",
-        /*state: { detail: data },*/
-      });
+      props.history.push("/home");
     });
   };
 

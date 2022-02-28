@@ -5,20 +5,22 @@ import axios from "axios";
 import './styles/auth.css';
 
 
-const register = () => {
+const register = (props) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const user = {};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if(password !== confirmPassword) {
       alert('La contraseña y la contraseña de confirmación no coinciden');
     } else{
-
-      await axios({
+      user = await axios({
         method: "POST",
         url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-up/",
         headers: { "Content-Type": "application/json" },
@@ -29,11 +31,11 @@ const register = () => {
     }
   }
 
-  /*useEffect(() => {
-    if (userInfo) {
-      props.history.push('/login');
+  useEffect(() => {
+    if (user) {
+      props.history.push('/home');
     }
-  }, [props.history, userInfo]);*/
+  }, [props.history, user]);
 
 
   return (

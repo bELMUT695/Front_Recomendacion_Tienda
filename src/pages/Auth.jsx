@@ -13,8 +13,8 @@ const Auth = (props) => {
     <div className={`containerr ${click ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          <Login />
-          <Register />
+          <Login props={props} />
+          <Register props={props} />
         </div>
       </div>
 

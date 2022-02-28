@@ -46,9 +46,9 @@ export const Login = (props) => {
     }).then(({ data }) => {
       login(data);
       props.history.push({
-        path: "/home",
+        pathname: "/",
         state: { detail: data },
-      })
+      });
     });
   };
 
@@ -78,7 +78,7 @@ export const Login = (props) => {
           />
         </div>
 
-        <button type="submit" value="Iniciar sesión" className="btn1 solid" />
+        <input type="submit" value="Iniciar sesión" className="btn1 solid" />
 
         <p className="social-text">O Iniciar sesión con plataformas sociales</p>
         <div className="social-media">

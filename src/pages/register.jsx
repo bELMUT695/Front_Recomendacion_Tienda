@@ -12,30 +12,28 @@ const register = (props) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const user = {};
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if(password !== confirmPassword) {
       alert('La contraseña y la contraseña de confirmación no coinciden');
     } else{
-      user = await axios({
+      const user = await axios({
         method: "POST",
         url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-up/",
         headers: { "Content-Type": "application/json" },
         data: {
           name, email, password
         },
+      }).then((res) => {
+        props.history.push('/home');
       });
     }
   }
 
   useEffect(() => {
-    if (user) {
       props.history.push('/home');
-    }
-  }, [props.history, user]);
+  }, [props.history]);
 
 
   return (

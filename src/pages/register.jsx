@@ -1,27 +1,82 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 import './styles/auth.css';
 
 
 const register = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(password !== confirmPassword) {
+      alert('La contraseña y la contraseña de confirmación no coinciden');
+    } else{
+
+      await axios({
+        method: "POST",
+        url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-up/",
+        headers: { "Content-Type": "application/json" },
+        data: {
+          name, email, password
+        },
+      });
+    }
+  }
+
+  /*useEffect(() => {
+    if (userInfo) {
+      props.history.push('/login');
+    }
+  }, [props.history, userInfo]);*/
+
+
   return (
     <Fragment>
-      <form className="sign-up-form">
+      <form className="sign-up-form" onSubmit={handleSubmit}>
 
         <h2 className="title">Register</h2>
         
         <div className="input-field">
           <i className="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input 
+            type="text" 
+            name="name"
+            placeholder="Username" 
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="input-field">
           <i className="fas fa-envelope"></i>
-          <input type="email" placeholder="Email" />
+          <input 
+            type="email" 
+            name="email"
+            placeholder="Email" 
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className="input-field">
           <i className="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="input-field">
+          <i className="fas fa-lock"></i>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Confirm Password" 
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
         </div>
 
         <input type="submit" className="btn1" value="Register" />

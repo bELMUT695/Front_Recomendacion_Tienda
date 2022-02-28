@@ -22,13 +22,14 @@ export const Login = (props) => {
       [event.target.name]: event.target.value,
     });
   };
-
+  
   const enviatDatos = async (event) => {
     event.preventDefault();
 
     const apiKeyToken =
       "2a28bce095a75eabced9c8467460af0fe40acb1359a279f6de465575dd721639";
     console.log(datos.email, datos.password);
+    
     const user = await axios({
       //url: "http://localhost:3001/api/auth/sign-in/",
 
@@ -46,7 +47,7 @@ export const Login = (props) => {
     }).then(({ data }) => {
       login(data);
       props.history.push({
-        pathname: "/",
+        pathname: "/home",
         state: { detail: data },
       });
     });

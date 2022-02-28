@@ -31,11 +31,6 @@ const register = (props) => {
     }
   }
 
-  useEffect(() => {
-      props.history.push('/home');
-  }, [props.history]);
-
-
   return (
     <Fragment>
       <form className="sign-up-form" onSubmit={handleSubmit}>

@@ -1,11 +1,16 @@
 import React, { Fragment, useState, useContext } from "react";
 import { Link } from 'react-router-dom';
-import "./styles/login.css";
 import axios from "axios";
+
+import './styles/auth.css';
 import AuthContext from "../contex/AuthContext";
+
+
 export const Login = (props) => {
+
   const { login } = useContext(AuthContext);
   console.log(useContext(AuthContext));
+
   const [datos, setDatos] = useState({
     email: "",
     password: "",
@@ -47,45 +52,50 @@ export const Login = (props) => {
   };
   return (
     <Fragment>
-      <section className="login">
-        <section className="login__container">
-          <h2 className="titulologin">Inicia sesión</h2>
-          <form onSubmit={enviatDatos}>
-            <input
-              name="email"
-              className="inputE"
-              type="text"
-              placeholder="Correo"
-              onChange={handleInputChange}
-            />
-            <input
-              name="password"
-              className="inputE"
-              type="password"
-              placeholder="Contraseña"
-              onChange={handleInputChange}
-            />
-            <button className="buttonlog" type="submit">
-              Iniciar sesión
-            </button>
-            <div className="form-check">
-              <label htmlFor="first_checkbox">
-                <input type="checkbox" id="cbox1" value="first_checkbox" />
-                Recuérdame
-              </label>{" "}
-              <a href="/">Olvidé mi contraseña</a>
-            </div>
+      <form className="sign-in-form" onSubmit={enviatDatos}>
+        <h2 className="title">Inicia sesión</h2>
 
-            <h1 className="mensaje">¿Eres nuevo en EbookNet?</h1>
-            <Link to="/register">
-              <button className="buttonlog" type="submit">
-                Crea su cuenta{" "}
-              </button>
-            </Link>
-            
-          </form>
-        </section>
-      </section>
+        <div className="input-field">
+          <i className="fas fa-user"></i>
+          <input 
+            name="email"
+            className="inputE"
+            type="text"
+            placeholder="Correo"
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="input-field">
+          <i className="fas fa-lock"></i>
+          <input 
+            name="password"
+            className="inputE"
+            type="password"
+            placeholder="Contraseña"
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <input type="submit" value="Iniciar sesión" className="btn1 solid" />
+
+        <p className="social-text">O Iniciar sesión con plataformas sociales</p>
+        <div className="social-media">
+          <a href="/" className="social-icon">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-google"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <a className="password-recuperation" href="#">Olvidé mi contraseña</a>
+      </form>
     </Fragment>
   );
 };

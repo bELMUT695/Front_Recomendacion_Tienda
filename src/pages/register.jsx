@@ -1,63 +1,49 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import './styles/register.css';
+import './styles/auth.css';
+
 
 const register = () => {
   return (
-    <div className="account-page">
-      <div className="container">
-        <div className="row">
-          <div className="col-2">
-            <img src="category-1-refactor.png" alt="images" width="80%" />
-          </div>
-          <div className="col-2 account-page-col">
-            <form >
-              <h2>Register</h2>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <div>
-                <input 
-                  type="text" 
-                  name="name"
-                  placeholder="Enter Name" 
-                  required 
-                  
-                />
-                <input 
-                  type="email" 
-                  name="email"
-                  placeholder="Enter Email" 
-                  required 
-                  
-                />
-                <input 
-                  type="password" 
-                  name="password" 
-                  placeholder="Enter Password" 
-                  required
-                  
-                />
-                <input 
-                  type="password" 
-                  name="password" 
-                  placeholder="Enter Confirm Password" 
-                  required
-                  
-                />
-                <br/><br/>
+    <Fragment>
+      <form className="sign-up-form">
 
-                <Link to="/login">¿Ya tienes una cuenta?</Link>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                <br/><br/>
-                <button className="btn" type="submit">Register</button>
-              </div>
-            </form>
-          </div>
+        <h2 className="title">Register</h2>
+        
+        <div className="input-field">
+          <i className="fas fa-user"></i>
+          <input type="text" placeholder="Username" />
         </div>
-      </div>
-    </div>
+        <div className="input-field">
+          <i className="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" />
+        </div>
+        <div className="input-field">
+          <i className="fas fa-lock"></i>
+          <input type="password" placeholder="Password" />
+        </div>
+
+        <input type="submit" className="btn1" value="Register" />
+
+        <p className="social-text">O Regístrese con las plataformas sociales        </p>
+
+        <div className="social-media">
+          <a href="/" className="social-icon">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-google"></i>
+          </a>
+          <a href="/" className="social-icon">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+    </Fragment>
   );
 };
 

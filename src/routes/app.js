@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from "../pages/login";
-import Register from "../pages/register";
+import Auth from "../pages/Auth";
 import Home from "../pages/home";
 import ListWomen from "../pages/ListWomen";
 import ListMen from "../pages/ListMen";
@@ -26,8 +25,7 @@ const App = () => {
       <AuthContext.Provider value={useinitialAuth}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/auth" component={Auth} />
             <Route exact path="/home" component={Home} />
 
             <Route path={["/men-top-list/:path?", "/recomendacion", "/todo"]}>

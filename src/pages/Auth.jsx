@@ -13,11 +13,8 @@ const Auth = () => {
     <div className={`containerr ${click ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-
-          <Register />
-
           <Login />
-
+          <Register />
         </div>
       </div>
 

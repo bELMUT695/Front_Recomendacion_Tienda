@@ -25,7 +25,7 @@ const App = () => {
       <AuthContext.Provider value={useinitialAuth}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/login" component={Auth} />
+            <Route path="/login" component={Auth} />
             <Route exact path="/home" component={Home} />
 
             <Route path={["/men-top-list/:path?", "/recomendacion", "/todo"]}>

@@ -45,10 +45,10 @@ export const Login = (props) => {
       },
     }).then(({ data }) => {
       login(data);
-     /*props.history.push({
+      props.history.push({
         pathname: "/home",
         state: { detail: data },
-      });*/
+      });
     });
   };
 

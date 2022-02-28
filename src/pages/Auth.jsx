@@ -4,7 +4,7 @@ import './styles/auth.css';
 import Register from './register';
 import Login from './login';
 
-const Auth = () => {
+const Auth = (props) => {
 
   const [click, setClick] = useState(false);
   console.log(click)

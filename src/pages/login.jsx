@@ -46,8 +46,8 @@ export const Login = (props) => {
     }).then(({ data }) => {
       login(data);
       props.history.push({
-        pathname: "/home",
-        state: { detail: data },
+        name: "/home",
+        /*state: { detail: data },*/
       });
     });
   };

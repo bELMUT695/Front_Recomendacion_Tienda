@@ -12,7 +12,7 @@ const register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if(password !== confirmPassword) {
       alert('La contraseña y la contraseña de confirmación no coinciden');

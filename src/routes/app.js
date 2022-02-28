@@ -26,7 +26,7 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             <Route path="/login" component={Auth} />
-            <Route exact path="/home" component={Home} />
+            <Route path="/home" component={Home} />
 
             <Route path={["/men-top-list/:path?", "/recomendacion", "/todo"]}>
               <LayoutMen>

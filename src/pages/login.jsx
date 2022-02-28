@@ -22,6 +22,7 @@ export const Login = (props) => {
       [event.target.name]: event.target.value,
     });
   };
+
   const enviatDatos = async (event) => {
     event.preventDefault();
 
@@ -44,12 +45,13 @@ export const Login = (props) => {
       },
     }).then(({ data }) => {
       login(data);
-      props.history.push({
+     /*props.history.push({
         pathname: "/home",
         state: { detail: data },
-      });
+      });*/
     });
   };
+
   return (
     <Fragment>
       <form className="sign-in-form" onSubmit={enviatDatos}>

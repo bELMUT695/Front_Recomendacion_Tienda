@@ -8,7 +8,7 @@ const ItemWomen = ({ product }) => {
   const { listItemWomem, isLoading, nrating } = useGetRatingByClothe(
     product._id
   );
-  console.log(product._id);
+
   const options = {
     value: listItemWomem,
     readOnly: true,
@@ -24,6 +24,7 @@ const ItemWomen = ({ product }) => {
         <div>
           <p>${product.unitPrice}</p>
           <p>{product.name}</p>
+          <p>{product.numSales} Vendidos</p>
         </div>
 
         <figure style={{ fontSize: "1.5em", color: "green" }}>

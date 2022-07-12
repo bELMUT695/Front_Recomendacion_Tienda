@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import useSingleWomen from "../hooks/useSingleWome";
+import { useSingleWomen } from "../hooks/useSingleWome";
 import Loader from "../components/loader/Loader";
 import ProductDetails from "../components/OrderItemDeatils";
 import AuthContext from "../contex/AuthContext";

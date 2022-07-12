@@ -7,6 +7,7 @@ const Category = () => {
         <li>
           <a href="/">CATEGORIES</a>
         </li>
+
         <li>
           <a href="/">All</a>
         </li>

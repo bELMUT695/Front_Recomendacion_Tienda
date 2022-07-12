@@ -13,15 +13,13 @@ const useGetRatingByClothe = (id) => {
     let acumladorRating = 0;
     for await (const item of response.data.data) {
       acumladorRating += item.RATING;
-      console.log(acumladorRating);
     }
-    console.log(response.data.data);
+
     const valueMediaRating = acumladorRating / response.data.data.length;
     const nratingclotes = response.data.data.length;
-    console.log(nratingclotes);
     setListItemWomem(valueMediaRating);
     setRating(nratingclotes);
-    console.log(valueMediaRating);
+
     SetLoading(false);
   }, []);
 

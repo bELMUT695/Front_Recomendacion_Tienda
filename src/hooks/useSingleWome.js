@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const API = "https://back-tienda-electronica.herokuapp.com/api/clothe/";
 
-const useSingleWomen = (id) => {
+export const useSingleWomen = (id) => {
   const [itemWomem, setItemWomen] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,4 +19,20 @@ const useSingleWomen = (id) => {
   return { isLoading, itemWomem };
 };
 
-export default useSingleWomen;
+export const useFilterforCategory = (id) => {
+  const [resultfilter, setResulfilter] = useState({});
+  const [isLoadingCategory, setIsLoadingCategory] = useState(true);
+
+  useEffect(async () => {
+    const response = await axios(
+      `http://localhost:3001/api/clothe/topselling/category/${id}`
+    );
+
+    setResulfilter(response.data.data);
+    console.log(response.data.data);
+    console.log("Holer", resultfilter);
+    setIsLoadingCategory(false);
+  }, []);
+
+  return { isLoadingCategory, resultfilter };
+};

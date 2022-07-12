@@ -41,7 +41,7 @@ const ListItemMen = () => {
             {products.map((product) =>
               product.gender == "Male" ? (
                 <Link
-                  to={`/men-top-list/${product._id}`}
+                  to={`//select-product/${product._id}`}
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
                   <ItemMen product={product} key={product._id} />

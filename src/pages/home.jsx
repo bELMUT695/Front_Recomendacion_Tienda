@@ -65,7 +65,7 @@ const Home = () => {
           <img src="https://res.cloudinary.com/sa-marcos/image/upload/v1643497730/Cuerpo_Entero_Women/Home/05_64_whnbc7.jpg" />
           niños
         </div>
-        <div 
+        <div
           className="opciones"
           onMouseEnter={() => setClickMen(true)}
           onMouseLeave={() => setClickMen(false)}

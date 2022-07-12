@@ -1,19 +1,18 @@
 import React from "react";
 import ItemWomen from "../components/ItemWomen";
 import "./style/ListitemWomen.scss";
-const API = "http://localhost:3001/api/clothe/topselling/categorys";
+
+const API =
+  "https://back-tienda-electronica.herokuapp.com/api/clothe/gender/Female";
 import ItemsWomen from "../hooks/useGetProductWomen";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 
-const ListItemWomen = () => {
-  const { products, isLoading } = ItemsWomen(API);
-  console.log(products);
-  if (isLoading) {
-    return <Loader />;
-  }
+const LisItemWomenTopSelled = ({ product }) => {
+  console.log(product);
+
   return (
     <div className="wrap">
       <div className="store-wrapper">
@@ -36,16 +35,14 @@ const ListItemWomen = () => {
             <Buscador />
           </div>
           <div className="ProductListWomen">
-            {products.map((item) =>
-              item[0].gender == "Female" ? (
-                <Link
-                  to={`/select-product/${item._id}`}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  <ItemWomen product={item[0]} key={item[0].id} />
-                </Link>
-              ) : null
-            )}
+            {product.map((item) => (
+              <Link
+                to={`/select-product/${item[0]._id}`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <ItemWomen product={item[0]} key={item[0].id} />
+              </Link>
+            ))}
           </div>
         </section>
       </div>
@@ -53,4 +50,4 @@ const ListItemWomen = () => {
   );
 };
 
-export default ListItemWomen;
+export default LisItemWomenTopSelled;

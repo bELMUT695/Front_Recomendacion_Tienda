@@ -36,7 +36,7 @@ const ListItemRedomendedwomen = () => {
           <div className="ProductListWomen">
             {listItemWomem.map((item) => (
               <Link
-                to={`/women-top-list/${item[0]._id}`}
+                to={`/select-product/${item[0]._id}`}
                 style={{ color: "inherit", textDecoration: "none" }}
               >
                 <ItemWomen product={item[0]} key={item[0].id} />

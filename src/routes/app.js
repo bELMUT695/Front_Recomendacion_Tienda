@@ -17,6 +17,7 @@ import useInitialAuth from "../hooks/useInitialAuth";
 import AuthContext from "../contex/AuthContext";
 import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 import Listrecomendedmen from "../pages/Listrecomendedmen";
+import ListCategoryWomen from "../pages/SelectListCategoryWomen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -35,7 +36,8 @@ const App = () => {
                 <Switch>
                   <Route exact path="/men-top-list" component={ListMen} />
                   <Route path="/men-top-list/:id" component={OrderItemMen} />
-                  <Route exact
+                  <Route
+                    exact
                     path="/recomendacion"
                     component={Listrecomendedmen}
                   />
@@ -43,11 +45,29 @@ const App = () => {
               </LayoutMen>
             </Route>
 
-            <Route path={["/women-top-list/:path?", "/recommended-clothe", "/cola-de-compras", "/all-clothes"]}>
+            <Route
+              path={[
+                "/select-product/:path?",
+                "/select-product2/category/:path?",
+                "/women-top-list",
+                "/women-top-list2/categoy/:path?",
+                "/recommended-clothe",
+                "/cola-de-compras",
+                "/all-clothes",
+              ]}
+            >
               <Layout>
                 <Switch>
                   <Route exact path="/women-top-list" component={ListWomen} />
-                  <Route path="/women-top-list/:id" component={OrderItemWomen} />
+
+                  <Route
+                    path="/select-product/:id"
+                    component={OrderItemWomen}
+                  />
+                  <Route
+                    path="/women-top-list/category/:id"
+                    component={ListCategoryWomen}
+                  />
                   <Route path="/cola-de-compras" component={MyOrderClothes} />
                   <Route
                     path="/recommended-clothe"
@@ -56,7 +76,6 @@ const App = () => {
                 </Switch>
               </Layout>
             </Route>
-
           </Switch>
         </BrowserRouter>
       </AuthContext.Provider>

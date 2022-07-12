@@ -1,13 +1,11 @@
 import React, { Fragment, useState, useContext } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-import './styles/auth.css';
+import "./styles/auth.css";
 import AuthContext from "../contex/AuthContext";
 
-
 const Login = (props) => {
-
   const { login } = useContext(AuthContext);
   console.log(useContext(AuthContext));
 
@@ -22,7 +20,7 @@ const Login = (props) => {
       [event.target.name]: event.target.value,
     });
   };
-  
+
   const enviatDatos = async (event) => {
     event.preventDefault();
 
@@ -31,9 +29,9 @@ const Login = (props) => {
     console.log(datos.email, datos.password);
 
     const user = await axios({
-      //url: "http://localhost:3001/api/auth/sign-in/",
+      url: "http://localhost:3001/api/auth/sign-in/",
 
-      url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-in/",
+      //url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-in/",
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -60,7 +58,7 @@ const Login = (props) => {
 
         <div className="input-field">
           <i className="fas fa-user"></i>
-          <input 
+          <input
             name="email"
             className="inputE"
             type="text"
@@ -70,7 +68,7 @@ const Login = (props) => {
         </div>
         <div className="input-field">
           <i className="fas fa-lock"></i>
-          <input 
+          <input
             name="password"
             className="inputE"
             type="password"
@@ -97,7 +95,9 @@ const Login = (props) => {
           </a>
         </div>
 
-        <a className="password-recuperation" href="#">Olvidé mi contraseña</a>
+        <a className="password-recuperation" href="#">
+          Olvidé mi contraseña
+        </a>
       </form>
     </Fragment>
   );

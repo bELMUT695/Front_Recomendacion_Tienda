@@ -35,13 +35,17 @@ const Navbar = () => {
       <div className={click ? "navbar-left active" : "navbar-left"}>
         <ul>
           <li>
-            <Link to="/women-top-list">best selling clothes</Link>
+            <Link to="/all-clothes">Todos</Link>
           </li>
           <li>
-            <Link to="/all-clothes">AllClothes</Link>
+            <Link to="/women-top-list">Mas Vendidos</Link>
+          </li>
+
+          <li>
+            <Link to="/recommended-clothe">Recomendados</Link>
           </li>
           <li>
-            <Link to="/recommended-clothe">Recommended Clothes</Link>
+            <Link to="/recommended-clothe">Prendas Nuevas Recomendados</Link>
           </li>
         </ul>
       </div>

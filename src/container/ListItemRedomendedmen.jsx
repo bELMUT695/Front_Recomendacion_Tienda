@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 import AuthContext from "../contex/AuthContext";
 
-
 const ListItemRedomendedmen = () => {
   const { auth } = useContext(AuthContext);
 
@@ -40,7 +39,7 @@ const ListItemRedomendedmen = () => {
           <div className="ProductListWomen">
             {listItemWomem.map((item) => (
               <Link
-                to={`/women-top-list/${item[0]._id}`}
+                to={`/select-product/${item[0]._id}`}
                 style={{ color: "inherit", textDecoration: "none" }}
               >
                 <ItemMen product={item[0]} key={item[0].id} />

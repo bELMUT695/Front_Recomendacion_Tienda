@@ -18,6 +18,7 @@ import AuthContext from "../contex/AuthContext";
 import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 import Listrecomendedmen from "../pages/Listrecomendedmen";
 import ListCategoryWomen from "../pages/SelectListCategoryWomen";
+import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
                 "/recommended-clothe",
                 "/cola-de-compras",
                 "/all-clothes",
+                "/recommended-clothe-cold",
               ]}
             >
               <Layout>
@@ -72,6 +74,10 @@ const App = () => {
                   <Route
                     path="/recommended-clothe"
                     component={Listrecomendedwomen}
+                  />
+                  <Route
+                    path="/recommended-clothe-cold"
+                    component={ListrecomendednewitemWomen}
                   />
                 </Switch>
               </Layout>

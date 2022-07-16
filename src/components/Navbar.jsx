@@ -45,7 +45,9 @@ const Navbar = () => {
             <Link to="/recommended-clothe">Recomendados</Link>
           </li>
           <li>
-            <Link to="/recommended-clothe">Prendas Nuevas Recomendados</Link>
+            <Link to="/recommended-clothe-cold">
+              Prendas Nuevas Recomendados
+            </Link>
           </li>
         </ul>
       </div>

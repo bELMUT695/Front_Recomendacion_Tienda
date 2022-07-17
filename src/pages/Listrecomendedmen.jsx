@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import ListItemRedomendedwomen from "../container/ListItemRedomendedwomen";
+import ListItemRedomendedmen from "../container/ListItemRedomendedmen";
 
 import AuthContext from "../contex/AuthContext";
 
-const Listrecomendedwomen = (props) => {
+const Listrecomendedmen = (props) => {
   const { auth } = useContext(AuthContext);
   return (
     <div>
-      {auth ? <ListItemRedomendedwomen /> : props.history.push("/login")}
+      {auth ? <ListItemRedomendedmen /> : props.history.push("/login")}
     </div>
   );
 };
 
-export default Listrecomendedwomen;
+export default Listrecomendedmen;

@@ -8,29 +8,27 @@ import useGetRatingByClothe from "../hooks/useGetRatingByClothe";
 
 const ItemMen = ({ product }) => {
 
+  const { listItemWomem, isLoading, nrating } 
+    = useGetRatingByClothe(product._id);
+
   const options = {
-    value: 3,
+    value: listItemWomem,
     readOnly: true,
     precision: 0.5,
   };
 
-  const { listItemWomem, isLoading, nrating } 
-    = useGetRatingByClothe(product._id);
-
   return (
     <div className="ProductItem">
       {
-        product.image.map((number) =>
-          <img className="Image"
-            src={number.URL}
-            alt="{logo}"
-          />
-        )
+        product.image.map((number) => (
+          <img src={number.URL} alt="{logo}" />
+          ))
       }
       <div className="product-info">
         <div>
           <p>${product.unitPrice}</p>
           <p>{product.name}</p>
+          <p>{product.numSales} Vendidos</p>
         </div>
 
         <figure style={{ fontSize: "1.5em", color: "green" }}>

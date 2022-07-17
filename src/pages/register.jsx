@@ -20,7 +20,8 @@ const register = (props) => {
     } else{
       const user = await axios({
         method: "POST",
-        url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-up/",
+        //url: "https://back-tienda-electronica.herokuapp.com/api/auth/sign-up/",
+        url: "http://localhost:3001/api/auth/sign-up/",
         headers: { "Content-Type": "application/json" },
         data: {
           name, email, password

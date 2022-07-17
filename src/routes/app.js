@@ -19,6 +19,7 @@ import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 import Listrecomendedmen from "../pages/Listrecomendedmen";
 import ListCategoryWomen from "../pages/SelectListCategoryWomen";
 import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
+import ListRecomendedNewItemMen from "../pages/ListrecomendednewitemMen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -32,15 +33,25 @@ const App = () => {
             <Route path="/login" component={Auth} />
             <Route path="/home" component={Home} />
 
-            <Route path={["/men-top-list/:path?", "/recomendacion", "/todo"]}>
+            <Route path={[
+              "/men/men-top-list/:path?", 
+              "/men/recommended-clothe", 
+              "/todo", 
+              "/men/recommended-clothe-cold"
+            ]}>
               <LayoutMen>
                 <Switch>
-                  <Route exact path="/men-top-list" component={ListMen} />
+                  <Route exact path="/men/men-top-list" component={ListMen} />
+
                   <Route path="/men-top-list/:id" component={OrderItemMen} />
                   <Route
                     exact
-                    path="/recomendacion"
+                    path="/men/recommended-clothe"
                     component={Listrecomendedmen}
+                  />
+                  <Route
+                    path="/men/recommended-clothe-cold"
+                    component={ListRecomendedNewItemMen}
                   />
                 </Switch>
               </LayoutMen>

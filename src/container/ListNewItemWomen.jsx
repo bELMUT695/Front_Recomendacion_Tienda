@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import ItemWomen from "../components/ItemWomen";
 import "./style/ListitemWomen.scss";
-const API = "http://localhost:3001/api/clothe/user/clothe";
 import useGetNewItemWomen from "../hooks/useGetNewItemWomen";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 import AuthContext from "../contex/AuthContext";
+
 const ListItemWomen = () => {
   const { auth } = useContext(AuthContext);
   const { listItemWomem, isLoading } = useGetNewItemWomen(auth.user.id);

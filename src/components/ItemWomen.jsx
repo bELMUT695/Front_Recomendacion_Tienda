@@ -3,7 +3,9 @@ import { Rating } from "@material-ui/lab";
 import "./styles/ItemWomen.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+
 import useGetRatingByClothe from "../hooks/useGetRatingByClothe";
+
 const ItemWomen = ({ product }) => {
   const { listItemWomem, isLoading, nrating } = useGetRatingByClothe(
     product._id

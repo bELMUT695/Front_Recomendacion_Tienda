@@ -7,7 +7,8 @@ const useGetRatingByClothe = (id) => {
   const [isLoading, SetLoading] = useState(true);
   useEffect(async () => {
     const response = await axios(
-      `https://back-tienda-electronica.herokuapp.com/api/rating/value-rating/${id}`
+      //`https://back-tienda-electronica.herokuapp.com/api/rating/value-rating/${id}`
+      `http://localhost:3001/api/rating/value-rating/${id}`,
     );
 
     let acumladorRating = 0;
@@ -27,3 +28,4 @@ const useGetRatingByClothe = (id) => {
 };
 
 export default useGetRatingByClothe;
+

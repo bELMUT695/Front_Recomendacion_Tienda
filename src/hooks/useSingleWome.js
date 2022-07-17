@@ -8,7 +8,8 @@ export const useSingleWomen = (id) => {
 
   useEffect(async () => {
     const response = await axios(
-      `https://back-tienda-electronica.herokuapp.com/api/clothe/${id}`
+      //`https://back-tienda-electronica.herokuapp.com/api/clothe/${id}`
+      `http://localhost:3001/api/clothe/${id}`
     );
 
     setItemWomen(response.data.data);

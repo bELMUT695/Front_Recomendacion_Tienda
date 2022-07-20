@@ -34,16 +34,25 @@ const App = () => {
             <Route path="/home" component={Home} />
 
             <Route path={[
-              "/men/men-top-list/:path?", 
+              "/men-top-list/:path?", 
+              "/men/select-product/:path?",
+              "/men/cola-de-compras",
               "/men/recommended-clothe", 
-              "/todo", 
               "/men/recommended-clothe-cold"
             ]}>
               <LayoutMen>
                 <Switch>
-                  <Route exact path="/men/men-top-list" component={ListMen} />
+                  <Route exact path="/men-top-list" component={ListMen} />
 
-                  <Route path="/men-top-list/:id" component={OrderItemMen} />
+                  <Route path="/men/select-product/:id" component={OrderItemMen} />
+
+                  <Route
+                    path="/men-top-list/category/:id"
+                    component={ListCategoryWomen}
+                  />
+
+                  <Route path="/men/cola-de-compras" component={MyOrderClothes} />
+
                   <Route
                     exact
                     path="/men/recommended-clothe"

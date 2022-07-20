@@ -3,16 +3,15 @@ import ItemMen from "../components/ItemMen";
 import "./style/ListItemMen.scss";
 import Loader from "../components/loader/Loader";
 import ItemsMen from "../hooks/useGetProductMen";
-import Category from "../components/Categorys";
+import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 
-const API =
-  "https://back-tienda-electronica.herokuapp.com/api/clothe/gender/Male";
+const API = "http://localhost:3001/api/clothe/topselling/categorys";
 
 const ListItemMen = () => {
   const { products, isLoading } = ItemsMen(API);
-
+  console.log(products);
   if (isLoading) {
     return <Loader />;
   }
@@ -39,12 +38,12 @@ const ListItemMen = () => {
           </div>
           <div className="ProductListMen">
             {products.map((product) =>
-              product.gender == "Male" ? (
+              product[0].gender == "Male" ? (
                 <Link
-                  to={`//select-product/${product._id}`}
+                  to={`/select-product/${product._id}`}
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
-                  <ItemMen product={product} key={product._id} />
+                  <ItemMen product={product[0]} key={product[0].id} />
                 </Link>
               ) : null
             )}

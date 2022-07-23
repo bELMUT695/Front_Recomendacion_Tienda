@@ -17,7 +17,9 @@ import useInitialAuth from "../hooks/useInitialAuth";
 import AuthContext from "../contex/AuthContext";
 import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 import Listrecomendedmen from "../pages/Listrecomendedmen";
+import ListCategoryMen from "../pages/SelectListCategoryMen";
 import ListCategoryWomen from "../pages/SelectListCategoryWomen";
+
 import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
 import ListRecomendedNewItemMen from "../pages/ListrecomendednewitemMen";
 //import Navbar from '../components/Navbar'
@@ -35,6 +37,7 @@ const App = () => {
 
             <Route path={[
               "/men-top-list/:path?", 
+              "/men-top-list/category/:path?", 
               "/men/select-product/:path?",
               "/men/cola-de-compras",
               "/men/recommended-clothe", 
@@ -48,7 +51,7 @@ const App = () => {
 
                   <Route
                     path="/men-top-list/category/:id"
-                    component={ListCategoryWomen}
+                    component={ListCategoryMen}
                   />
 
                   <Route path="/men/cola-de-compras" component={MyOrderClothes} />

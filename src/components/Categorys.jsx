@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/Category.scss";
+import { Link } from "react-router-dom";
 const Category = () => {
   return (
     <div className="mobile-menu">
@@ -12,10 +13,10 @@ const Category = () => {
           <a href="/">All</a>
         </li>
         <li>
-          <a href="/">Polos</a>
+          <Link to="/men-top-list/category/2">Polos</Link>
         </li>
         <li>
-          <a href="/">Camisas</a>
+          <Link to="/men-top-list/category/3">Camisas</Link>
         </li>
         <li>
           <a href="/">Shorts</a>

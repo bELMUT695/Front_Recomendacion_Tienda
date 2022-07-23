@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import ItemMen from "../components/ItemMen";
 import "./style/ListitemWomen.scss";
-import useGetNewItemMen from "../hooks/useGetNewItemMen";
+
+const API =
+  "https://back-tienda-electronica.herokuapp.com/api/clothe/gender/Male";
+import ItemsWomen from "../hooks/useGetProductWomen";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Categorys";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
-import AuthContext from "../contex/AuthContext";
 
-const ListItemWomen = () => {
-  const { auth } = useContext(AuthContext);
-  const { listItemMen, isLoading } = useGetNewItemMen(auth.user.id);
+const LisItemMenTopSelled = ({ product }) => {
+  const a =  product.map((aa) => {const abv= aa[0]; return abv;});
+  console.log('product********************', product[0]);
+  console.log('a********************', a);
 
-  if (isLoading) {
-    return <Loader />;
-  }
   return (
     <div className="wrap">
       <div className="store-wrapper">
@@ -37,16 +37,16 @@ const ListItemWomen = () => {
             <Buscador />
           </div>
           <div className="ProductListWomen">
-            {listItemMen.map((item) =>
-              item[0].gender == "Male" ? (
-                <Link
-                  to={`/select-product/${item._id}`}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                >
-                  <ItemMen product={item[0]} key={item[0].id} />
-                </Link>
-              ) : null
-            )}
+          
+            {product.map((item) => (
+              
+              <Link
+                to={`/select-product/${item[0]._id}`}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <ItemMen product={item[0]} key={item[0].id} />
+              </Link>
+            ))}
           </div>
         </section>
       </div>
@@ -54,4 +54,4 @@ const ListItemWomen = () => {
   );
 };
 
-export default ListItemWomen;
+export default LisItemMenTopSelled;

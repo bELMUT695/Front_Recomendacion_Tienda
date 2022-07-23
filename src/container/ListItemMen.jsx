@@ -3,7 +3,7 @@ import ItemMen from "../components/ItemMen";
 import "./style/ListItemMen.scss";
 import Loader from "../components/loader/Loader";
 import ItemsMen from "../hooks/useGetProductMen";
-import Category from "../components/Category";
+import Category from "../components/Categorys";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 

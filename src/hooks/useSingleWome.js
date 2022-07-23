@@ -21,6 +21,8 @@ export const useSingleWomen = (id) => {
 };
 
 export const useFilterforCategory = (id) => {
+
+  console.log("holi dentro", id);
   const [resultfilter, setResulfilter] = useState({});
   const [isLoadingCategory, setIsLoadingCategory] = useState(true);
 

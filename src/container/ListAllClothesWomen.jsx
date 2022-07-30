@@ -1,17 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import ItemWomen from "../components/ItemWomen";
 import "./style/ListitemWomen.scss";
-import useGetNewItemWomen from "../hooks/useGetNewItemWomen";
+import { useAllClothesWomen } from "../hooks/useSingleWome";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
-import AuthContext from "../contex/AuthContext";
 
 const ListItemWomen = () => {
-  const { auth } = useContext(AuthContext);
-  const { listItemWomem, isLoading } = useGetNewItemWomen(auth.user.id);
-
+  const { isLoading, allClothesWomen } = useAllClothesWomen();
+  console.log(allClothesWomen);
   if (isLoading) {
     return <Loader />;
   }
@@ -37,13 +35,13 @@ const ListItemWomen = () => {
             <Buscador />
           </div>
           <div className="ProductListWomen">
-            {listItemWomem.map((item) =>
-              item[0].gender == "Female" ? (
+            {allClothesWomen.map((item) =>
+              item.gender == "Female" ? (
                 <Link
-                  to={`/select-product/${item[0]._id}`}
+                  to={`/select-product/${item._id}`}
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
-                  <ItemWomen product={item[0]} key={item[0].id} />
+                  <ItemWomen product={item} key={item.id} />
                 </Link>
               ) : null
             )}

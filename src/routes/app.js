@@ -20,6 +20,7 @@ import Listrecomendedmen from "../pages/Listrecomendedmen";
 import ListCategoryWomen from "../pages/SelectListCategoryWomen";
 import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
 import ListRecomendedNewItemMen from "../pages/ListrecomendednewitemMen";
+import AllClothesWomen from "../pages/AllListWomen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -33,25 +34,33 @@ const App = () => {
             <Route path="/login" component={Auth} />
             <Route path="/home" component={Home} />
 
-            <Route path={[
-              "/men-top-list/:path?", 
-              "/men/select-product/:path?",
-              "/men/cola-de-compras",
-              "/men/recommended-clothe", 
-              "/men/recommended-clothe-cold"
-            ]}>
+            <Route
+              path={[
+                "/men-top-list/:path?",
+                "/men/select-product/:path?",
+                "/men/cola-de-compras",
+                "/men/recommended-clothe",
+                "/men/recommended-clothe-cold",
+              ]}
+            >
               <LayoutMen>
                 <Switch>
                   <Route exact path="/men-top-list" component={ListMen} />
 
-                  <Route path="/men/select-product/:id" component={OrderItemMen} />
+                  <Route
+                    path="/men/select-product/:id"
+                    component={OrderItemMen}
+                  />
 
                   <Route
                     path="/men-top-list/category/:id"
                     component={ListCategoryWomen}
                   />
 
-                  <Route path="/men/cola-de-compras" component={MyOrderClothes} />
+                  <Route
+                    path="/men/cola-de-compras"
+                    component={MyOrderClothes}
+                  />
 
                   <Route
                     exact
@@ -99,6 +108,7 @@ const App = () => {
                     path="/recommended-clothe-cold"
                     component={ListrecomendednewitemWomen}
                   />
+                  <Route path="/all-clothes" component={AllClothesWomen} />
                 </Switch>
               </Layout>
             </Route>

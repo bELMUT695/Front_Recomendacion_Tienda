@@ -43,6 +43,7 @@ const Login = (props) => {
         password: datos.password,
       },
     }).then(({ data }) => {
+      console.log(data);
       login(data);
       props.history.push({
         pathname: "/home",

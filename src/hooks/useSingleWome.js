@@ -37,3 +37,19 @@ export const useFilterforCategory = (id) => {
 
   return { isLoadingCategory, resultfilter };
 };
+
+export const useAllClothesWomen = () => {
+  const [allClothesWomen, setAllClothesWomen] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(async () => {
+    const response = await axios(`http://localhost:3001/api/clothe`);
+
+    setAllClothesWomen(response.data.data);
+    console.log(response.data.data);
+    console.log(isLoading);
+    setIsLoading(false);
+  }, []);
+
+  return { isLoading, allClothesWomen };
+};

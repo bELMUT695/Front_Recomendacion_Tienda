@@ -7,13 +7,16 @@ import shoppingCart from "./assets/icons/icon_shopping_cart.svg";
 import UserContext from "../contex/CartContext";
 import AuthContext from "../contex/AuthContext";
 import Category from "./Category";
+import { useEffect } from "react";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const { auth } = useContext(AuthContext);
   const { stateCart } = useContext(UserContext);
-
+  const { usercoldstart } = useContext(AuthContext);
   const handleClick = () => setClick(!click);
-
+  useEffect(() => {
+    console.log(usercoldstart);
+  }, []);
   return (
     <nav
       header
@@ -37,18 +40,24 @@ const Navbar = () => {
           <li>
             <Link to="/all-clothes">Todos</Link>
           </li>
+
           <li>
             <Link to="/women-top-list">Mas Vendidos</Link>
           </li>
 
-          <li>
-            <Link to="/recommended-clothe">Recomendados</Link>
-          </li>
-          <li>
-            <Link to="/recommended-clothe-cold">
-              Prendas Nuevas Recomendados
-            </Link>
-          </li>
+          {usercoldstart ? (
+            <li>
+              <Link to="/recommended-clothe">Recomendados</Link>
+            </li>
+          ) : null}
+
+          {usercoldstart ? (
+            <li>
+              <Link to="/recommended-clothe-cold">
+                Prendas Nuevas Recomendados
+              </Link>
+            </li>
+          ) : null}
         </ul>
       </div>
 

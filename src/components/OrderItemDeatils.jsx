@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import ReactStars from "react-rating-stars-component";
 import UserContext from "../contex/CartContext";
+import AuthContext from "../contex/AuthContext";
+import axios from "axios";
+
 import { Rating } from "@material-ui/lab";
+import usePostValueItem from "../hooks/usePostRatingValue";
 import {
   Dialog,
   DialogActions,
@@ -15,16 +19,22 @@ import {
 } from "@material-ui/core";
 
 const OrderItem = ({ product }) => {
-
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [value, setValue] = useState(0);
 
+  const { auth } = useContext(AuthContext);
+  const { setUserColdStart } = useContext(AuthContext);
   const { addToCart } = useContext(UserContext);
   console.log(useContext(UserContext));
   const handleClick = (item) => {
     addToCart(item);
+  };
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+    setValue(newRating);
   };
   const options = {
     edit: false,
@@ -40,19 +50,34 @@ const OrderItem = ({ product }) => {
     color: "rgba(20, 20, 20, 0.1)",
     activeColor: "#ffd700",
     size: window.innerWidth < 600 ? 15 : 30,
+    value: 0,
     isHalf: false,
   };
-
-  
 
   const submitReviewToggle = () => {
     open ? setOpen(false) : setOpen(true);
   };
 
-  const reviewSubmitHandler = () => {
+  const reviewSubmitHandler = async (option1) => {
     console.log("guardado");
 
     setOpen(false);
+    const DestailUserItemValue = {
+      ID_CLOTHE: product[0]._id,
+      RATING: value,
+      ID_USER: parseInt(auth.user.id),
+      k: 0,
+    };
+    console.log(DestailUserItemValue);
+
+    const res = await usePostValueItem(auth.user.id, DestailUserItemValue);
+
+    //enviar un metdo pos para actualizar los cluster
+
+    console.log(res);
+    if (res) {
+      setUserColdStart(true);
+    }
   };
 
   const increaseQuantity = () => {
@@ -117,12 +142,13 @@ const OrderItem = ({ product }) => {
           <br />
 
           <div className="reviews">
-            <ReactStars {...options} />{" "}
-            <span>(5 reviews) </span>            
+            <ReactStars {...options} /> <span>(5 reviews) </span>
           </div>
 
           <div className="reviews-starts">
-            <button onClick={submitReviewToggle} className="button-56">Submit Review</button>          
+            <button onClick={submitReviewToggle} className="button-56">
+              Submit Review
+            </button>
           </div>
 
           <Dialog
@@ -132,11 +158,12 @@ const OrderItem = ({ product }) => {
           >
             <DialogTitle>Submit Review</DialogTitle>
             <DialogContent className="submitDialog">
-              
-              <ReactStars  
-                {...options1}        
+              <ReactStars
+                count={5}
+                onChange={ratingChanged}
+                size={24}
+                color2={"#ffd700"}
               />{" "}
-
               <textarea
                 className="submitDialogTextArea"
                 cols="30"
@@ -149,12 +176,14 @@ const OrderItem = ({ product }) => {
               <Button onClick={submitReviewToggle} color="secondary">
                 Cancel
               </Button>
-              <Button onClick={reviewSubmitHandler} color="primary">
+              <Button
+                onClick={() => reviewSubmitHandler(options1)}
+                color="primary"
+              >
                 Submit
               </Button>
             </DialogActions>
           </Dialog>
-
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ const ItemWomen = ({ product }) => {
     readOnly: true,
     precision: 0.5,
   };
+
   return (
     <div className="ProductItem">
       {product.image.map((number) => (

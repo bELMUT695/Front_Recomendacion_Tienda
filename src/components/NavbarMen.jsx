@@ -6,7 +6,7 @@ import menu from "./assets/icons/icon_menu.svg";
 import shoppingCart from "./assets/icons/icon_shopping_cart.svg";
 import UserContext from "../contex/CartContext";
 import AuthContext from "../contex/AuthContext";
-import Category from "./Category";
+import Category from "./Categorys";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const { auth } = useContext(AuthContext);

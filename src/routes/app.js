@@ -17,7 +17,9 @@ import useInitialAuth from "../hooks/useInitialAuth";
 import AuthContext from "../contex/AuthContext";
 import Listrecomendedwomen from "../pages/Listrecomendedwomen";
 import Listrecomendedmen from "../pages/Listrecomendedmen";
+import ListCategoryMen from "../pages/SelectListCategoryMen";
 import ListCategoryWomen from "../pages/SelectListCategoryWomen";
+
 import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
 import ListRecomendedNewItemMen from "../pages/ListrecomendednewitemMen";
 import AllClothesWomen from "../pages/AllListWomen";
@@ -34,6 +36,7 @@ const App = () => {
             <Route path="/login" component={Auth} />
             <Route path="/home" component={Home} />
 
+<<<<<<< HEAD
             <Route
               path={[
                 "/men-top-list/:path?",
@@ -43,6 +46,16 @@ const App = () => {
                 "/men/recommended-clothe-cold",
               ]}
             >
+=======
+            <Route path={[
+              "/men-top-list/:path?", 
+              "/men-top-list/category/:path?", 
+              "/men/select-product/:path?",
+              "/men/cola-de-compras",
+              "/men/recommended-clothe", 
+              "/men/recommended-clothe-cold"
+            ]}>
+>>>>>>> 4e2f55bf5d5bcc96ea641945d84319d0fb9b6778
               <LayoutMen>
                 <Switch>
                   <Route exact path="/men-top-list" component={ListMen} />
@@ -54,7 +67,7 @@ const App = () => {
 
                   <Route
                     path="/men-top-list/category/:id"
-                    component={ListCategoryWomen}
+                    component={ListCategoryMen}
                   />
 
                   <Route

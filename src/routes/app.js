@@ -36,26 +36,16 @@ const App = () => {
             <Route path="/login" component={Auth} />
             <Route path="/home" component={Home} />
 
-<<<<<<< HEAD
             <Route
               path={[
                 "/men-top-list/:path?",
+                "/men-top-list/category/:path?",
                 "/men/select-product/:path?",
                 "/men/cola-de-compras",
                 "/men/recommended-clothe",
                 "/men/recommended-clothe-cold",
               ]}
             >
-=======
-            <Route path={[
-              "/men-top-list/:path?", 
-              "/men-top-list/category/:path?", 
-              "/men/select-product/:path?",
-              "/men/cola-de-compras",
-              "/men/recommended-clothe", 
-              "/men/recommended-clothe-cold"
-            ]}>
->>>>>>> 4e2f55bf5d5bcc96ea641945d84319d0fb9b6778
               <LayoutMen>
                 <Switch>
                   <Route exact path="/men-top-list" component={ListMen} />

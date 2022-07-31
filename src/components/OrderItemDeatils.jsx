@@ -66,7 +66,7 @@ const OrderItem = ({ product }) => {
       ID_CLOTHE: product[0]._id,
       RATING: value,
       ID_USER: parseInt(auth.user.id),
-      k: 0,
+      k: 3,
     };
     console.log(DestailUserItemValue);
 

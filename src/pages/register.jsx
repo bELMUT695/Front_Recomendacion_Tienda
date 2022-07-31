@@ -7,7 +7,9 @@ import './styles/auth.css';
 
 const register = (props) => {
 
-  const [name, setName] = useState('');
+  const [first_name, setFirstName] = useState('');
+  const [last_name, setLastName] = useState('');
+  const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -24,7 +26,7 @@ const register = (props) => {
         url: "http://localhost:3001/api/auth/sign-up/",
         headers: { "Content-Type": "application/json" },
         data: {
-          name, email, password
+          first_name, last_name, gender, email, password
         },
       }).then((res) => {
         props.history.push('/home');
@@ -42,9 +44,27 @@ const register = (props) => {
           <i className="fas fa-user"></i>
           <input 
             type="text" 
-            name="name"
-            placeholder="Username" 
-            onChange={(e) => setName(e.target.value)}
+            name="first_name"
+            placeholder="FirstName" 
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div className="input-field">
+          <i className="fas fa-user"></i>
+          <input 
+            type="text" 
+            name="last_name"
+            placeholder="LastName" 
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
+        <div className="input-field">
+          <i className="fas fa-user"></i>
+          <input 
+            type="text" 
+            name="gender"
+            placeholder="Gender" 
+            onChange={(e) => setGender(e.target.value)}
           />
         </div>
         <div className="input-field">

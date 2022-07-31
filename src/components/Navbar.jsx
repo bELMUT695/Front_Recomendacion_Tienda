@@ -11,9 +11,15 @@ import { useEffect } from "react";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const { auth } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const { stateCart } = useContext(UserContext);
   const { usercoldstart } = useContext(AuthContext);
   const handleClick = () => setClick(!click);
+
+  const logout = async () => {
+    localStorage.removeItem("stateSerializer");
+    const res = await login();
+  };
   useEffect(() => {
     console.log(usercoldstart);
   }, []);
@@ -120,6 +126,14 @@ const Navbar = () => {
                 <Link style={{ color: "inherit", textDecoration: "none" }}>
                   <li>
                     <a>favoritos</a>
+                  </li>
+                </Link>
+                <Link
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={logout}
+                >
+                  <li>
+                    <a>Logout</a>
                   </li>
                 </Link>
               </ul>

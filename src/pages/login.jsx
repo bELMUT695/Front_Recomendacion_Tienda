@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { saveToLocalStorage } from "../hooks/useLocalStorage";
 import "./styles/auth.css";
 import AuthContext from "../contex/AuthContext";
+import { useEffect } from "react";
 
 const Login = (props) => {
   const { login } = useContext(AuthContext);
@@ -13,7 +14,14 @@ const Login = (props) => {
     email: "",
     password: "",
   });
-
+  useEffect(async () => {
+    const authUser = await login();
+    if (authUser) {
+      props.history.push({
+        pathname: "/home",
+      });
+    }
+  }, []);
   const handleInputChange = (event) => {
     setDatos({
       ...datos,
@@ -44,10 +52,11 @@ const Login = (props) => {
       },
     }).then(({ data }) => {
       console.log(data);
-      login(data);
+
+      saveToLocalStorage(data);
+      login();
       props.history.push({
         pathname: "/home",
-        state: { detail: data },
       });
     });
   };

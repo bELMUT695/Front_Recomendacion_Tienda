@@ -7,6 +7,12 @@ import menu from "./assets/icons/icon_menu.svg";
 import AuthContext from "../contex/AuthContext";
 const NavbarHome = () => {
   const { auth } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
+
+  const logout = async () => {
+    localStorage.removeItem("stateSerializer");
+    const res = await login();
+  };
   return (
     <nav className="header sticky-top">
       <div>
@@ -72,6 +78,14 @@ const NavbarHome = () => {
                 <Link style={{ color: "inherit", textDecoration: "none" }}>
                   <li>
                     <a>favoritos</a>
+                  </li>
+                </Link>
+                <Link
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={logout}
+                >
+                  <li>
+                    <a>Logout</a>
                   </li>
                 </Link>
               </ul>

@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { loadFromLocalStorage } from "./useLocalStorage";
+import { useHistory } from "react-router-dom";
 const useInitialAuth = () => {
   const [auth, setAuth] = useState(null);
   const [usercoldstart, setUserColdStart] = useState(null);
+  const history = useHistory();
 
-  const login = async (payload) => {
-    const response = await axios(
-      //`https://back-tienda-electronica.herokuapp.com/api/rating/${id}`
-      `http://localhost:3001/api/rating/consultrating/${payload.user.id}`
-    );
-    console.log(payload.user.id);
-    console.log(response.data.message);
-    setAuth(payload);
-    setUserColdStart(response.data.message);
+  const login = async (props) => {
+    const payload = loadFromLocalStorage();
+
+    if (payload) {
+      const response = await axios(
+        //`https://back-tienda-electronica.herokuapp.com/api/rating/${id}`
+        `http://localhost:3001/api/rating/consultrating/${payload.user.id}`
+      );
+      setUserColdStart(response.data.message);
+      console.log(response.data.message);
+      console.log(payload, "loadd");
+      setAuth(payload);
+      return payload;
+    } else {
+      setAuth(null);
+    }
+    return false;
   };
 
   return {

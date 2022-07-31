@@ -26,6 +26,10 @@ const Home = () => {
   const [click, setClick] = useState(false);
   const [clickMen, setClickMen] = useState(false);
   const { auth } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
+  useEffect(() => {
+    login();
+  }, []);
   return (
     <>
       <Navbar />

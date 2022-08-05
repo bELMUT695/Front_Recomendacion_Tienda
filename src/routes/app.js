@@ -23,6 +23,7 @@ import ListCategoryWomen from "../pages/SelectListCategoryWomen";
 import ListrecomendednewitemWomen from "../pages/ListrecomendednewitemWomen";
 import ListRecomendedNewItemMen from "../pages/ListrecomendednewitemMen";
 import AllClothesWomen from "../pages/AllListWomen";
+import AllClothesMen from "../pages/AllListMen";
 //import Navbar from '../components/Navbar'
 
 const App = () => {
@@ -44,10 +45,13 @@ const App = () => {
                 "/men/cola-de-compras",
                 "/men/recommended-clothe",
                 "/men/recommended-clothe-cold",
+                "/men/all-clothes"
               ]}
             >
               <LayoutMen>
                 <Switch>
+                  
+
                   <Route exact path="/men-top-list" component={ListMen} />
 
                   <Route
@@ -74,6 +78,8 @@ const App = () => {
                     path="/men/recommended-clothe-cold"
                     component={ListRecomendedNewItemMen}
                   />
+
+                  <Route path="/men/all-clothes" component={AllClothesMen} />
                 </Switch>
               </LayoutMen>
             </Route>

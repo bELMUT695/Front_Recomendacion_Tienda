@@ -7,9 +7,6 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import useGetRatingByClothe from "../hooks/useGetRatingByClothe";
 
 const ItemMen = ({ product }) => {
-
-  
-
   const { listItemWomem, isLoading, nrating } 
     = useGetRatingByClothe(product._id);
 

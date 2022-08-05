@@ -1,17 +1,15 @@
 import React from "react";
 import ItemMen from "../components/ItemMen";
-import "./style/ListItemMen.scss";
+import "./style/ListitemWomen.scss";
+import { useAllClothesWomen } from "../hooks/useSingleWome";
 import Loader from "../components/loader/Loader";
-import ItemsMen from "../hooks/useGetProductMen";
 import Category from "../components/Categorys";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 
-const API = "http://localhost:3001/api/clothe/topselling/categorys";
-
 const ListItemMen = () => {
-  const { products, isLoading } = ItemsMen(API);
-  console.log(products);
+  const { isLoading, allClothesWomen } = useAllClothesWomen();
+  console.log(allClothesWomen);
   if (isLoading) {
     return <Loader />;
   }
@@ -32,18 +30,18 @@ const ListItemMen = () => {
           </div>
         </div>
 
-        <section className="main-container-men">
-          <div className="Buscador-men">
+        <section className="main-container-women">
+          <div className="Buscador-women">
             <Buscador />
           </div>
-          <div className="ProductListMen">
-            {products.map((product) =>
-              product[0].gender == "Male" ? (
+          <div className="ProductListWomen">
+            {allClothesWomen.map((item) =>
+              item.gender == "Male" ? (
                 <Link
-                  to={`/select-product/${product[0]._id}`}
+                  to={`/select-product/${item._id}`}
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
-                  <ItemMen product={product[0]} key={product[0].id} />
+                  <ItemMen product={item} key={item.id} />
                 </Link>
               ) : null
             )}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { serverURL } from "../utils/routing";
 const useGetRecomendedMen = (id) => {
   const [listItemWomem, setListItemWomem] = useState([]);
   const [isLoading, SetLoading] = useState(true);
@@ -7,7 +8,7 @@ const useGetRecomendedMen = (id) => {
   useEffect(async () => {
     const response = await axios(
       //`https://back-tienda-electronica.herokuapp.com/api/rating/${id}`
-      `http://localhost:3001/api/rating/${id}`,
+      `${serverURL}/api/rating/${id}`,
     );
     console.log(response.data.data);
 

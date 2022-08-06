@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { loadFromLocalStorage } from "./useLocalStorage";
 import { useHistory } from "react-router-dom";
+import { serverURL } from "../utils/routing";
 const useInitialAuth = () => {
   const [auth, setAuth] = useState(null);
   const [usercoldstart, setUserColdStart] = useState(null);
@@ -13,7 +14,7 @@ const useInitialAuth = () => {
     if (payload) {
       const response = await axios(
         //`https://back-tienda-electronica.herokuapp.com/api/rating/${id}`
-        `http://localhost:3001/api/rating/consultrating/${payload.user.id}`
+        `${serverURL}/api/rating/consultrating/${payload.user.id}`
       );
       setUserColdStart(response.data.message);
       console.log(response.data.message);

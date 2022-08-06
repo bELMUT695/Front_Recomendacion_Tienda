@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { serverURL } from "../utils/routing";
 const usePostValueItem = async (id, objectInsert) => {
   const response = await axios.post(
-    `http://localhost:3001/api/rating/insert-rating/${id}`,
+    `${serverURL}/api/rating/insert-rating/${id}`,
     objectInsert
   );
   console.log(response);

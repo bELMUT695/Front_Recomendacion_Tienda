@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { serverURL } from "../utils/routing";
 const useGetRatingByClothe = (id) => {
   const [listItemWomem, setListItemWomem] = useState([]);
   const [nrating, setRating] = useState(0);
@@ -8,7 +8,7 @@ const useGetRatingByClothe = (id) => {
   useEffect(async () => {
     const response = await axios(
       //`https://back-tienda-electronica.herokuapp.com/api/rating/value-rating/${id}`
-      `http://localhost:3001/api/rating/value-rating/${id}`,
+      `${serverURL}/api/rating/value-rating/${id}`
     );
 
     let acumladorRating = 0;
@@ -28,4 +28,3 @@ const useGetRatingByClothe = (id) => {
 };
 
 export default useGetRatingByClothe;
-

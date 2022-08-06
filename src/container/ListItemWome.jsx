@@ -1,7 +1,8 @@
 import React from "react";
 import ItemWomen from "../components/ItemWomen";
 import "./style/ListitemWomen.scss";
-const API = "http://localhost:3001/api/clothe/topselling/categorys";
+const API =
+  "https://back-tienda-electronica.herokuapp.com/api/clothe/topselling/categorys";
 import ItemsWomen from "../hooks/useGetProductWomen";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Category";

@@ -143,11 +143,11 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6">
               <Link
-                className="nav-link"
+                className="nav-det"
                 to={auth ? "/women-top-list" : "/login"}
               >
-                <div className="card">
-                  <img
+                <div className="card-det">
+                  <img className="img-pers-cat"
                     src="https://res.cloudinary.com/sa-marcos/image/upload/v1643506846/Cuerpo_Entero_Women/Home/triple_01_xl_na2p4n.jpg"
                     alt=""
                   />
@@ -190,9 +190,9 @@ const Home = () => {
             </div>
 
             <div className="col-md-6">
-              <Link className="nav-link" to={auth ? "/men-top-list" : "/login"}>
-                <div className="card">
-                  <img
+              <Link className="nav-det" to={auth ? "/men-top-list" : "/login"}>
+                <div className="card-det">
+                  <img className="img-pers-cat"
                     src="https://images.ctfassets.net/8397t4ds1z4f/3lVMQ2dht9TISIixwuPA0M/b25f061a70dabdf9aece97aa11fa76c6/tryp_male.jpg?h=1000&w=800&q=50&fm=jpg"
                     alt=""
                   />

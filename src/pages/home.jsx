@@ -113,11 +113,8 @@ const Home = () => {
             clearTimeout(resetTimeout);
                         resetTimeout = setTimeout(() => {
                             carouselRef?.current?.goTo(0);
-                        }, 3000); // same time
+                        }, 4000); // same time
         }}
-         
-        
-          
           autoTabIndexVisibleItems={true}
           enableSwipe={false}
           itemPadding={[0, 2]}

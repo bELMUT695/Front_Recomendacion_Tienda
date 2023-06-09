@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext,useRef } from "react";
 import { Link } from "react-router-dom";
 import "./styles/home.css";
 import Navbar from "../components/NavbarHome";
@@ -23,10 +23,14 @@ const breakPointsOptions = [
 ];
 const Home = () => {
   const [state, setState] = useState(0);
+  const [stateinit, setStateinit] = useState(false);
   const [click, setClick] = useState(false);
   const [clickMen, setClickMen] = useState(false);
   const { auth } = useContext(AuthContext);
   const { login } = useContext(AuthContext);
+  const carouselRef = useRef(null);
+  const  totalPages=4;
+  let resetTimeout;
   useEffect(() => {
     login();
   }, []);
@@ -104,14 +108,21 @@ const Home = () => {
           breakPoints={breakPoints}
           autoPlaySpeed={3000}
           enableAutoPlay={true}
+          ref={carouselRef}
           onNextEnd={(currentItem, pageIndex) => {
-            setState(pageIndex);
-            console.log(state);
-          }}
+            clearTimeout(resetTimeout);
+                        resetTimeout = setTimeout(() => {
+                            carouselRef?.current?.goTo(0);
+                        }, 3000); // same time
+        }}
+         
+        
+          
+          autoTabIndexVisibleItems={true}
           enableSwipe={false}
           itemPadding={[0, 2]}
           enableTilt={true}
-          initialActiveIndex={state}
+          initialActiveIndex={stateinit? stateinit:state}
         >
           <img
             className="itemCarrusel"

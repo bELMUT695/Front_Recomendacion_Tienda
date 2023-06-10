@@ -6,12 +6,9 @@ import ItemsMen from "../hooks/useGetProductMen";
 import Category from "../components/Categorys";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
-
-const API =
-  "http://localhost:3001/api/clothe/topselling/categorys";
-
+import { serverURL } from "../utils/routing";
 const ListItemMen = () => {
-  const { products, isLoading } = ItemsMen(API);
+  const { products, isLoading } = ItemsMen(`${serverURL}/api/clothe/topselling/categorys`);
   console.log(products);
   if (isLoading) {
     return <Loader />;

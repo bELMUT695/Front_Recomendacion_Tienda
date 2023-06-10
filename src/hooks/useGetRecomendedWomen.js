@@ -6,7 +6,6 @@ const useGetRecomendedWomen = (id) => {
   const [isLoading, SetLoading] = useState(true);
   useEffect(async () => {
     const response = await axios(
-      //`https://back-tienda-electronica.herokuapp.com/api/rating/${id}`
       `${serverURL}/api/rating/${id}`
     );
     console.log(response.data.data);

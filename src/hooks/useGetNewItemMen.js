@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { serverURL } from "../utils/routing";
-const API = "http://localhost:3001/api/clothe/user/clothe";
 const useGetRecomendedMen = (id) => {
   const [listItemMen, setListItemMen] = useState([]);
   const [isLoading, SetLoading] = useState(true);

@@ -1,8 +1,7 @@
 import React from "react";
 import ItemWomen from "../components/ItemWomen";
 import "./style/ListitemWomen.scss";
-const API =
-  "http://localhost:3001/api/clothe/topselling/categorys";
+import { serverURL } from "../utils/routing";
 import ItemsWomen from "../hooks/useGetProductWomen";
 import Loader from "../components/loader/Loader";
 import Category from "../components/Category";
@@ -10,7 +9,7 @@ import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
 
 const ListItemWomen = () => {
-  const { products, isLoading } = ItemsWomen(API);
+  const { products, isLoading } = ItemsWomen(`${serverURL}/api/clothe/topselling/categorys`);
   console.log(products);
   if (isLoading) {
     return <Loader />;

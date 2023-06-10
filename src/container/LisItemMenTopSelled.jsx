@@ -1,11 +1,6 @@
 import React from "react";
 import ItemMen from "../components/ItemMen";
 import "./style/ListitemWomen.scss";
-
-const API =
-  "https://back-tienda-electronica.herokuapp.com/api/clothe/gender/Male";
-import ItemsWomen from "../hooks/useGetProductWomen";
-import Loader from "../components/loader/Loader";
 import Category from "../components/Categorys";
 import { Link } from "react-router-dom";
 import Buscador from "../components/BuscadorWomenItem";
